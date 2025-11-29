@@ -1,0 +1,48 @@
+<?php
+$blocks_id = $block['id'];
+$blocks_class = isset($block['class']) ? $block['class'] : '';
+$anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
+$data = get_field('hero_1');
+$bg_image = get_image($data['bg_image']);
+
+$text_color = $data['text_color'] ?? '#fff';
+?>
+<style>
+    .hero-1-<?php echo esc_attr($blocks_id); ?>,
+    .hero-1-<?php echo esc_attr($blocks_id); ?> p,
+    .hero-1-<?php echo esc_attr($blocks_id); ?> h1,
+    .hero-1-<?php echo esc_attr($blocks_id); ?> span,
+    .hero-1-<?php echo esc_attr($blocks_id); ?> ul,
+    .hero-1-<?php echo esc_attr($blocks_id); ?> li {
+        color: <?php echo esc_attr($text_color); ?> !important;
+    }
+</style>
+<section class="hero-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+    <div class="relative py-16 md:py-24">    
+        <?php if ($bg_image) : ?>
+        <!-- Background Image -->
+        <img src="<?php echo esc_url($bg_image['url']); ?>" 
+             alt="<?php echo esc_attr($bg_image['alt'] ?? ''); ?>"
+             class="absolute inset-0 w-full h-full object-cover">
+        <?php endif; ?>
+    
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-2xl">
+                <?php if ($data['title']) : ?>
+                    <h1 class="h1-responsive mb-4"><?php echo esc_html($data['title']); ?></h1>
+                <?php endif; ?>
+                <?php if ($data['description']) : ?>
+                    <div class="text-xl mb-8 opacity-90"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <?php endif; ?>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <?php if ($data['link_1']) : ?>
+                        <?php link_1($data['link_1']); ?>
+                    <?php endif; ?>
+                    <?php if ($data['link_2']) : ?>
+                        <?php link_2($data['link_2']); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
