@@ -75,4 +75,5 @@ Thumbs.db
 # add your own entries here
 !wp-content/themes/maxwell-team
 !wp-content/themes/maxwell-team/theme.json
+!.github/
 !package.json
