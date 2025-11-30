@@ -185,6 +185,10 @@ function mma_future_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'wc-blocks-style' ); // Ako koristite WooCommerce
 }
 add_action( 'wp_enqueue_scripts', 'mma_future_scripts' );
 
