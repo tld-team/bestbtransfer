@@ -6,7 +6,7 @@ $data = get_field('popular_1');
 // dd($data);
 ?>
 <!-- Popular Tours Section - Version 1 -->
-<section class="py-20 popular-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-10 sm:py-16 lg:py-24 popular-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if ($data['top_title']) : ?>

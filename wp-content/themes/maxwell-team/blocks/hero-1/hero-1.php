@@ -17,7 +17,7 @@ $text_color = $data['text_color'] ?? '#fff';
         color: <?php echo esc_attr($text_color); ?> !important;
     }
 </style>
-<section class="hero-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-10 sm:py-16 lg:py-24 hero-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="relative py-16 md:py-24">    
         <?php if ($bg_image) : ?>
         <!-- Background Image -->

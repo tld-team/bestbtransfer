@@ -7,7 +7,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 ?>
 
 <!-- Services Section - Version 1 -->
-<section class="py-20 bg-white">
+<section class="py-10 sm:py-16 lg:py-24 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <span class="text-primary font-semibold">OUR SERVICES</span>

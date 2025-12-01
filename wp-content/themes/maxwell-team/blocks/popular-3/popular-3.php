@@ -6,7 +6,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('popular_3');
 ?>
 <!-- Popular Tours Section -->
-<section class="py-16 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-10 sm:py-16 lg:py-24 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>

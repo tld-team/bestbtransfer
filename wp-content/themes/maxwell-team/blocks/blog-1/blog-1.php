@@ -14,7 +14,7 @@ $bg_color = $data['bg_color'];
     }
 </style>
 <!-- 3. Blog/Content sekcija -->
-<section id="<?php echo esc_attr($anchor); ?>" class="py-20 blog-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
+<section id="<?php echo esc_attr($anchor); ?>" class="py-10 sm:py-16 lg:py-24 blog-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) : ?>
@@ -26,7 +26,7 @@ $bg_color = $data['bg_color'];
             <?php endif; ?>
             
             <?php if (!empty($data['description'])) : ?>
-            <div class="text-gray-600 max-w-2xl mx-auto text-lg"><?php echo apply_filters('the_content', $data['description']); ?></div>
+            <div class="max-w-2xl mx-auto text-lg"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
         
@@ -41,7 +41,7 @@ $bg_color = $data['bg_color'];
                 <?php endif; ?>
                 <div class="p-6">
                     <h3 class="h3-responsive mb-3"><a href="<?php echo $post['link']; ?>" title="<?php echo $post['title']; ?>" target="_blank"><?php echo $post['title']; ?></a></h3>
-                    <p class="text-gray-600 mb-4"><?php echo $post['excerpt']; ?></p>
+                    <p class="mb-4"><?php echo $post['excerpt']; ?></p>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-500 text-sm"><?php echo $post['date']; ?></span>
                         

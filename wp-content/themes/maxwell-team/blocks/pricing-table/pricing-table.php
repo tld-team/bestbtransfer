@@ -3,8 +3,7 @@
 $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
-$data = get_field('service_2');
-$right = $data['right'];
+$data = get_field('pricing_table');
 ?>
 <style>
     @media (max-width: 768px) {
@@ -18,7 +17,7 @@ $right = $data['right'];
 </style>
 
 <!-- Pricing Table -->
-<div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+<div class="bg-white rounded-2xl shadow-xl overflow-hidden py-10 sm:py-16 lg:py-24 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <!-- Table -->
     <div class="overflow-x-auto pricing-table">
         <table class="w-full">

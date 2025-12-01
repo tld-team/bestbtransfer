@@ -19,7 +19,7 @@ $internal_padding = str_contains("$blocks_class", "internal-padding") ? 'py-10 s
     }
 </style>
 
-<section class="features-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-10 sm:py-16 lg:py-24 features-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="px-4 mx-auto max-w-7xl <?php echo $internal_padding; ?>">
         <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div class="<?php echo $revers ? 'lg:order-2' : 'lg:order-1'; ?>">

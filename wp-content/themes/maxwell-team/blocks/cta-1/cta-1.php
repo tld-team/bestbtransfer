@@ -7,7 +7,7 @@ $data = get_field('cta_1');
 $bg_image = get_image($data['background_image']);
 ?>
 
-<section class="relative overflow-hidden">
+<section class="py-10 sm:py-16 lg:py-24 relative overflow-hidden">
 
     <!-- Wrapper za pozadinsku sliku -->
     <div class="absolute inset-0 overflow-hidden">

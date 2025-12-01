@@ -7,7 +7,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 ?>
 
 <!-- Booking CTA Section -->
-    <section class="py-16 bg-primary text-white">
+    <section class="py-10 sm:py-16 lg:py-24 bg-primary text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="h2-responsive mb-4">Ready to Book Your Ride?</h2>

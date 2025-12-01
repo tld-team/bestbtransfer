@@ -6,7 +6,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('service_2');
 $right = $data['right'];
 ?>
-<section class="py-20 bg-gray-50">
+<section class="py-10 sm:py-16 lg:py-24 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) { ?>
