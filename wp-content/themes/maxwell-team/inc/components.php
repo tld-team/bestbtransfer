@@ -50,7 +50,7 @@ function link_3($link, $class = '')
 function link_4($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition flex items-center justify-center <?php echo esc_attr($class); ?>">
+    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="border-2 border-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-black/10 transition flex items-center justify-center <?php echo esc_attr($class); ?>">
         <i class="fas fa-play-circle mr-2"></i> <?php echo esc_html($link['title']); ?>
     </a>
 <?php

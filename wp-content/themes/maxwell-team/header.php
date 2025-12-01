@@ -12,11 +12,11 @@
 <body <?php body_class('font-body'); ?>>
 <?php wp_body_open(); ?>
 <!-- <div id="page" class="site"> -->
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'mma-future'); ?></a>
+	<a class="skip-link screen-reader-text hidden" href="#primary"><?php esc_html_e('Skip to content', 'mma-future'); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="transparent p-4 fixed top-0 z-50 w-full mx-auto">
-			<nav class="nav-container top-0 z-50 bg-gray-900/90 backdrop-blur-md border border-gray-700 px-4 rounded-xl">
+	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white">
+		<div class="w-full mx-auto">
+			<nav class="nav-container px-4">
 				<div class="flex items-center justify-between">
 					<!-- Logo -->
 					<div class="flex items-center">
@@ -38,7 +38,7 @@
 									// This is a dropdown item
 									?>
 									<div class="dropdown relative">
-										<button class="flex items-center text-white transition-colors font-medium">
+										<button class="flex items-center transition-colors font-medium">
 											<span><?php echo $item->title; ?></span>
 											<i class="fas fa-chevron-down ml-1 text-xs"></i>
 										</button>
@@ -54,7 +54,7 @@
 								} else {
 									// This is a simple menu item
 									?>
-									<a href="<?php echo $item->url; ?>" class="text-white transition-colors font-medium">
+									<a href="<?php echo $item->url; ?>" class="transition-colors font-medium">
 										<?php echo $item->title; ?>
 									</a>
 									<?php
@@ -65,7 +65,7 @@
 						
 						<!-- Language Selector -->
 						<div class="dropdown relative">
-							<button class="flex items-center text-white transition-colors font-medium">
+							<button class="flex items-center transition-colors font-medium">
 								<i class="fas fa-globe mr-1"></i>
 								<span>EN</span>
 								<i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -100,7 +100,7 @@
 									// Mobile dropdown
 									?>
 									<div class="mobile-dropdown">
-										<button class="flex items-center justify-between w-full text-white transition-colors py-2 font-medium" onclick="toggleMobileDropdown(this)">
+										<button class="flex items-center justify-between w-full transition-colors py-2 font-medium" onclick="toggleMobileDropdown(this)">
 											<span><?php echo $item->title; ?></span>
 											<i class="fas fa-chevron-down text-xs"></i>
 										</button>
@@ -114,7 +114,7 @@
 								} else {
 									// Simple mobile item
 									?>
-									<a href="<?php echo $item->url; ?>" class="text-white transition-colors py-2 font-medium">
+									<a href="<?php echo $item->url; ?>" class="transition-colors py-2 font-medium">
 										<?php echo $item->title; ?>
 									</a>
 									<?php
