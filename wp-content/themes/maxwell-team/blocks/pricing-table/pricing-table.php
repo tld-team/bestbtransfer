@@ -17,7 +17,7 @@ $data = get_field('pricing_table');
 </style>
 
 <!-- Pricing Table -->
-<div class="bg-white rounded-2xl shadow-xl overflow-hidden py-10 sm:py-16 lg:py-24 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<div class="bg-white rounded-2xl shadow-xl overflow-hidden py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <!-- Table -->
     <div class="overflow-x-auto pricing-table">
         <table class="w-full">

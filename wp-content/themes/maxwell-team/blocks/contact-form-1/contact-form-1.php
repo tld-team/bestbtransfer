@@ -6,7 +6,7 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 ?>
 <!-- 5. Call to Action sa formom -->
-    <section class="py-10 sm:py-16 lg:py-24 bg-gradient-to-r from-primary to-blue-600 text-white">
+    <section class="py-8 sm:py-12 lg:py-18 bg-gradient-to-r from-primary to-blue-600 text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

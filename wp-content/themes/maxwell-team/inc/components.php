@@ -14,7 +14,7 @@
 function link_1($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="bg-secondary text-gray-900 px-6 py-3 rounded-lg font-semibold text-center hover:bg-amber-500 transition <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></a>
+    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="bg-white border-2 border-button text-button bg-transparent px-8 py-4 rounded-xl hover:bg-button hover:text-white transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></a>
 <?php
 }
 
@@ -34,7 +34,7 @@ function link_1($link, $class = '')
 function link_2($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="bg-white text-primary px-6 py-3 rounded-lg font-semibold text-center hover:bg-gray-100 transition <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></a>
+    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="border-2 border-button text-white bg-button px-8 py-4 rounded-xl hover:bg-white hover:text-button transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></a>
 <?php
 }
 
@@ -42,17 +42,25 @@ function link_2($link, $class = '')
 function link_3($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-lg flex items-center justify-center <?php echo esc_attr($class); ?>">
-        <i class="fas fa-calendar-check mr-2"></i> <?php echo esc_html($link['title']); ?>
-    </a>
+    <a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>" target="<?php echo $link['target']; ?>" class="inline-flex items-center rounded-xl border-2 border-button text-white bg-button px-8 py-4 hover:bg-transparent hover:text-button transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>" role="button">
+                    <?php echo $link['title']; ?>
+                    <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </a>
 <?php
 }
 function link_4($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="border-2 border-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-black/10 transition flex items-center justify-center <?php echo esc_attr($class); ?>">
-        <i class="fas fa-play-circle mr-2"></i> <?php echo esc_html($link['title']); ?>
-    </a>
+    <a 
+    href="<?php echo esc_url($link['url']); ?>" 
+    <?php echo $link['target'] ? 'target="_blank"' : ''; ?>
+    class="border-2 border-button text-button bg-transparent px-4 py-2 rounded-xl hover:bg-button hover:text-white transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>"
+>
+    <i class="fas fa-play-circle mr-2"></i> 
+    <?php echo esc_html($link['title']); ?>
+</a>
 <?php
 }
 
@@ -60,9 +68,14 @@ function link_5($link, $class = '')
 {
 ?>
 
-    <a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>" target="_blank" class="flex items-center group <?php echo esc_attr($class); ?>">
-        <?php echo __('Read more', 'maxwell'); ?>
-        <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition text-xs"></i>
-    </a>
+    <a 
+    href="<?php echo $link['url']; ?>" 
+    title="<?php echo $link['title']; ?>" 
+    target="_blank" 
+    class="inline-flex items-center group text-[#FF700A] hover:text-white px-5 py-2.5 rounded-lg bg-transparent hover:bg-[#FF700A] border border-[#FF700A] hover:border-[#FF700A] transition-all duration-300 font-medium hover:shadow-md <?php echo esc_attr($class); ?>"
+>
+    <span class="mr-2"><?php echo __('Read more', 'maxwell'); ?></span>
+    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300 text-sm"></i>
+</a>
 <?php
 }

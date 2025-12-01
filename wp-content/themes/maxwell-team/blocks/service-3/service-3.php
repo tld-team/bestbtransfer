@@ -8,7 +8,7 @@ $right = $data['right'];
 ?>
 
 <!-- Sekcija sa Uslugama -->
-<section class="py-10 sm:py-16 lg:py-24 bg-white">
+<section class="py-8 sm:py-12 lg:py-18 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Naše Usluge</h2>

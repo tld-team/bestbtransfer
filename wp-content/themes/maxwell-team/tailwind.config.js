@@ -15,6 +15,7 @@ module.exports = {
         body: '#4b4b4b',
         icon: '#1d4ed8',
         secondary: '#f59e0b',
+        button: '#FF700A',
         accent: '#dc2626'
       },
       fontFamily: {

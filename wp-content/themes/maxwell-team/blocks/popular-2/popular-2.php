@@ -6,7 +6,7 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 ?>
 <!-- Popular Tours Section - Version 2 -->
-    <section class="py-10 sm:py-16 lg:py-24 bg-gray-50">
+    <section class="py-8 sm:py-12 lg:py-18 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <span class="text-primary font-semibold">ALTERNATIVE LAYOUT</span>

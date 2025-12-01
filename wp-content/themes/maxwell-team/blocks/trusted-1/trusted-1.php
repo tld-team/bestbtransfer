@@ -7,7 +7,7 @@ $data = get_field('trusted_1');
 ?>
 
 <!-- 4. Trust Signals sekcija -->
-<section class="py-10 sm:py-16 lg:py-24 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-8 sm:py-12 lg:py-18 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) : ?>

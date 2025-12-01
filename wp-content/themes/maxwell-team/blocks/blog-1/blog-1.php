@@ -14,7 +14,7 @@ $bg_color = $data['bg_color'];
     }
 </style>
 <!-- 3. Blog/Content sekcija -->
-<section id="<?php echo esc_attr($anchor); ?>" class="py-10 sm:py-16 lg:py-24 blog-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
+<section id="<?php echo esc_attr($anchor); ?>" class="py-8 sm:py-12 lg:py-18 blog-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) : ?>
