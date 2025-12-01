@@ -934,6 +934,10 @@ h4 span {
   z-index: 50;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1337,6 +1341,11 @@ h4 span {
   border-color: rgb(255 112 10 / var(--tw-border-opacity, 1));
 }
 
+.border-button {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 112 10 / var(--tw-border-opacity, 1));
+}
+
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
@@ -1352,11 +1361,6 @@ h4 span {
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
 }
 
-.border-button {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 112 10 / var(--tw-border-opacity, 1));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -1370,6 +1374,11 @@ h4 span {
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+}
+
+.bg-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 112 10 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-50 {
@@ -1444,19 +1453,9 @@ h4 span {
   background-color: rgb(255 255 255 / 0.2);
 }
 
-.bg-yellow-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1));
-}
-
 .bg-yellow-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1));
-}
-
-.bg-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 112 10 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-20 {
@@ -1634,6 +1633,11 @@ h4 span {
   padding-right: 1rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1659,6 +1663,11 @@ h4 span {
   padding-bottom: 0.5rem;
 }
 
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1682,16 +1691,6 @@ h4 span {
 .py-\[150px\] {
   padding-top: 150px;
   padding-bottom: 150px;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
 }
 
 .pb-5 {
@@ -1803,6 +1802,11 @@ h4 span {
   color: rgb(30 64 175 / var(--tw-text-opacity, 1));
 }
 
+.text-button {
+  --tw-text-opacity: 1;
+  color: rgb(255 112 10 / var(--tw-text-opacity, 1));
+}
+
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
@@ -1898,11 +1902,6 @@ h4 span {
 .text-yellow-600 {
   --tw-text-opacity: 1;
   color: rgb(202 138 4 / var(--tw-text-opacity, 1));
-}
-
-.text-button {
-  --tw-text-opacity: 1;
-  color: rgb(255 112 10 / var(--tw-text-opacity, 1));
 }
 
 .opacity-80 {
@@ -2048,6 +2047,11 @@ h4 span {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 112 10 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -2088,19 +2092,8 @@ h4 span {
   background-color: rgb(15 118 110 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-yellow-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-yellow-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 98 7 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-button:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 112 10 / var(--tw-bg-opacity, 1));
+.hover\:bg-transparent:hover {
+  background-color: transparent;
 }
 
 .hover\:bg-white:hover {
@@ -2108,8 +2101,9 @@ h4 span {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-transparent:hover {
-  background-color: transparent;
+.hover\:bg-yellow-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 98 7 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:from-blue-700:hover {
@@ -2122,14 +2116,14 @@ h4 span {
   --tw-gradient-to: #15803d var(--tw-gradient-to-position);
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
 .hover\:text-button:hover {
   --tw-text-opacity: 1;
   color: rgb(255 112 10 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:shadow-md:hover {
@@ -2142,11 +2136,6 @@ h4 span {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.focus\:bg-yellow-400:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
 }
 
 .focus\:outline-none:focus {
@@ -2205,14 +2194,14 @@ h4 span {
     padding-bottom: 3rem;
   }
 
-  .sm\:py-\[250px\] {
-    padding-top: 250px;
-    padding-bottom: 250px;
-  }
-
   .sm\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .sm\:py-\[250px\] {
+    padding-top: 250px;
+    padding-bottom: 250px;
   }
 
   .sm\:pb-6 {
@@ -2271,10 +2260,6 @@ h4 span {
 
   .lg\:order-2 {
     order: 2;
-  }
-
-  .lg\:mt-16 {
-    margin-top: 4rem;
   }
 
   .lg\:grid-cols-2 {

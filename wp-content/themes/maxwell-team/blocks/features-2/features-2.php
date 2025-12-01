@@ -31,7 +31,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
                 <?php endif; ?>
                 
                 <?php if (!empty($data['content'])) : ?>
-                <div class="mt-4"><?php echo apply_filters('the_content', $data['content']); ?></div>
+                <div class="m-4"><?php echo apply_filters('the_content', $data['content']); ?></div>
                 <?php endif; ?>
 
                 <?php if (!empty($data['link'])) : ?>
