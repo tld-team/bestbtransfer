@@ -16,7 +16,7 @@
 
 	<?php $top_bar = get_field('top_bar', 'option'); ?>
 
-	<div class="bg-[#F6F6F6]">
+	<div class="bg-[#F6F6F6] md:block hidden">
 		<div class="flex flex-col md:flex-row justify-between items-center text-top_bar p-4 max-w-7xl mx-auto">
 			<?php if (!empty($top_bar)) : ?>
 				<div class="flex flex-col md:flex-row md:items-center md:space-x-8 mb-4 md:mb-0 w-full md:w-auto ">
@@ -133,7 +133,7 @@
 					</div>
 
 					<!-- Mobile Menu Button -->
-					<button class="md:hidden text-white" id="menu4-toggle">
+					<button class="md:hidden text-button" id="menu4-toggle">
 						<i class="fas fa-bars text-xl"></i>
 					</button>
 				</div>
