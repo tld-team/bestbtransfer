@@ -24,7 +24,7 @@ $text_color = $data['text_color'] ?? '#fff';
         <!-- Background Image -->
         <img src="<?php echo esc_url($bg_image['url']); ?>" 
              alt="<?php echo esc_attr($bg_image['alt'] ?? ''); ?>"
-             class="absolute inset-0 w-full h-full object-cover">
+             class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
         <?php endif; ?>
     
         <div class="container mx-auto px-4 relative">
