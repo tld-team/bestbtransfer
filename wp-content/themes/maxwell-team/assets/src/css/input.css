@@ -100,7 +100,7 @@
   
   /* H6 Styles */
   .h6-responsive {
-    @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;
+    @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;    
   }
 
   /*
@@ -119,6 +119,8 @@
   h4 span {
     @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
   }
+
+
 }
 
 span.maxwell-top-title {
@@ -183,3 +185,32 @@ span.maxwell-top-title {
     50% { transform: translate(0, 10px); }
     100% { transform: translate(0, -0px); }
 }
+
+  /* 
+   * Styles for the list of links under the content list.
+   * The list is displayed as a flex container with no spacing between items.
+   * Each list item has padding and rounded corners.
+   * The background is a gradient from blue to indigo.
+   * The border is blue on hover and has a shadow on hover.
+   * The text color is the same as the button text color.
+   */
+  /* Stil za listu sa disc markerima */
+  .content-list-link ul {
+    @apply !list-none !pl-0 py-2;
+  }
+
+  /* Kreiranje custom disc markera */
+  .content-list-link ul li {
+    @apply relative pl-3 py-1;
+  }
+  
+  .content-list-link ul li::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-button;
+  }
+
+
+  /* Boja za sve linkove unutar .content-list-link */
+  .content-list-link a {
+    @apply !text-button hover:underline; 
+  }

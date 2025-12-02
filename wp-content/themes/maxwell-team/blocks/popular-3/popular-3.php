@@ -16,7 +16,7 @@ $data = get_field('popular_3');
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
             <?php if (!empty($data['description'])) : ?>
-                <div class="max-w-2xl mx-auto"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="max-w-2xl mx-auto  content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
 
@@ -55,7 +55,7 @@ $data = get_field('popular_3');
                                 <?php endif; ?>
                             </div>
                             <?php if (!empty($item['description'])): ?>
-                                <div class="mb-4"><?php echo apply_filters('the_content', $item['description']); ?></div>
+                                <div class="mb-4 content-list-link"><?php echo apply_filters('the_content', $item['description']); ?></div>
                             <?php endif; ?>
                             <?php if (!empty($item['link'])): ?>
                                 <a href="<?php echo $item['link']['url']; ?>" class="flex items-center text-button"><?php echo $item['link']['title'] ?> <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition "></i></a>

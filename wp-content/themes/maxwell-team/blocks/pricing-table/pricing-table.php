@@ -31,7 +31,7 @@ $data = get_field('pricing_table');
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
             <?php if (!empty($data['description'])) : ?>
-                <div class="max-w-2xl mx-auto"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="max-w-2xl mx-auto content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
         <!-- Table -->

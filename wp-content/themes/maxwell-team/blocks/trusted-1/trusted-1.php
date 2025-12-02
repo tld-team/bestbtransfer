@@ -17,7 +17,7 @@ $data = get_field('trusted_1');
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
             <?php if (!empty($data['description'])) : ?>
-                <div class="max-w-2xl mx-auto"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="max-w-2xl mx-auto content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
 
@@ -34,7 +34,7 @@ $data = get_field('trusted_1');
                             <h3 class="h3-responsive mt-2 mb-2"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['description'])) : ?>
-                            <div class="mt-2"><?php echo apply_filters('the_content', $item['description']); ?></div>
+                            <div class="mt-2 content-list-link"><?php echo apply_filters('the_content', $item['description']); ?></div>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>

@@ -33,7 +33,7 @@ $text_color = $data['text_color'] ?? '#fff';
                     <h1 class="h1-responsive mb-4"><?php echo esc_html($data['title']); ?></h1>
                 <?php endif; ?>
                 <?php if ($data['description']) : ?>
-                    <div class="text-xl mb-8 opacity-90"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                    <div class="mb-8 content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
                 <?php endif; ?>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <?php if ($data['link_1']) : ?>

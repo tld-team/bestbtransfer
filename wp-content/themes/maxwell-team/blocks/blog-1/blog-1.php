@@ -26,7 +26,7 @@ $bg_color = $data['bg_color'];
             <?php endif; ?>
             
             <?php if (!empty($data['description'])) : ?>
-            <div class="max-w-2xl mx-auto text-lg"><?php echo apply_filters('the_content', $data['description']); ?></div>
+            <div class="max-w-2xl mx-auto content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
         

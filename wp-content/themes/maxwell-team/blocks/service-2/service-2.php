@@ -15,7 +15,7 @@ $right = $data['right'];
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>
             <?php } ?>
             <?php if (!empty($data['description'])) { ?>
-                <div class="max-w-2xl mx-auto"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="max-w-2xl mx-auto content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php } ?>
         </div>
 
@@ -52,7 +52,7 @@ $right = $data['right'];
                     <h3 class="h3-responsive mt-2 mb-6"><?php echo $right['title']; ?></h3>
                 <?php endif; ?>
                 <?php if (!empty($right['description'])) : ?>
-                    <div class="mb-8"><?php echo apply_filters('the_content', $right['description']); ?></div>
+                    <div class="mb-8 content-list-link"><?php echo apply_filters('the_content', $right['description']); ?></div>
                 <?php endif; ?>
 
                 <div class="space-y-6">
@@ -67,7 +67,7 @@ $right = $data['right'];
                                 <div>
                                     <h4 class="h4-responsive mt-2 mb-1 font-semibold"><?php echo $item['title']; ?></h4>
                                     <?php if (!empty($item['description'])) : ?>
-                                        <div><?php echo apply_filters('the_content', $item['description']); ?></div>
+                                        <div class="content-list-link"><?php echo apply_filters('the_content', $item['description']); ?></div>
                                     <?php endif; ?>
                                 </div>
                             </div>

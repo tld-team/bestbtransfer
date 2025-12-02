@@ -35,7 +35,7 @@ $bg_image = get_image($data['background_image']);
                 <h1 class="h1-responsive mb-6"><?php echo esc_html($data['title']); ?></h1>
             <?php endif; ?>
             <?php if ($data['description']) : ?>
-                <div class="text-xl mb-8"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="text-xl mb-8 content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
     </div>

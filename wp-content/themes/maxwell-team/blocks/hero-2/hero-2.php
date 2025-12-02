@@ -29,7 +29,7 @@ $text_color = $data['text_color'] ?? '#fff';
             <?php endif; ?>
             
             <?php if ($data['description']) : ?>
-            <div class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90">
+            <div class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto  content-list-link">
                 <?php echo apply_filters('the_content', $data['description']); ?>
             </div>
             <?php endif; ?>

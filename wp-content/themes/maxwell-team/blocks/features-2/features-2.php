@@ -8,12 +8,7 @@ $background_color = $data['background_color'] ?? '#fff';
 $revers = $data['reverse'] == 'yes' ? true : false;
 ?>
 <style>
-    .features-2-<?php echo esc_attr($blocks_id); ?>,
-    .features-2-<?php echo esc_attr($blocks_id); ?> p,
-    .features-2-<?php echo esc_attr($blocks_id); ?> h1,
-    .features-2-<?php echo esc_attr($blocks_id); ?> span,
-    .features-2-<?php echo esc_attr($blocks_id); ?> ul,
-    .features-2-<?php echo esc_attr($blocks_id); ?> li {
+    .features-2-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo esc_attr($background_color); ?> !important;
     }
 </style>
@@ -31,7 +26,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
                 <?php endif; ?>
                 
                 <?php if (!empty($data['content'])) : ?>
-                <div class="my-4"><?php echo apply_filters('the_content', $data['content']); ?></div>
+                <div class="my-4  content-list-link"><?php echo apply_filters('the_content', $data['content']); ?></div>
                 <?php endif; ?>
 
                 <?php if (!empty($data['link'])) : ?>
