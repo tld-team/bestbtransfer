@@ -19,7 +19,7 @@ $text_color = $data['text_color'] ?? '#fff';
     }
 </style>
 <section class="hero-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
-    <div class="relative py-8 sm:py-12 lg:py-18">    
+    <div class="relative py-16 sm:py-20 lg:py-24">    
         <?php if ($bg_image) : ?>
         <!-- Background Image -->
         <img src="<?php echo esc_url($bg_image['url']); ?>" 

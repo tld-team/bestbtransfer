@@ -48,7 +48,7 @@ $data = get_field('popular_3');
                         <div class="p-4">
                             <div class="flex justify-between items-center mb-2">
                                 <?php if (!empty($item['time'])): ?>
-                                    <span class=""><i class="fas fa-clock mr-1"></i> <?php echo $item['time']; ?></span>
+                                    <span class=""><i class="fas fa-clock mr-1 text-button"></i> <?php echo $item['time']; ?></span>
                                 <?php endif; ?>
                                 <?php if (!empty($item['price'])): ?>
                                     <span class="font-semibold"><?php echo $item['price']; ?></span>
@@ -58,7 +58,7 @@ $data = get_field('popular_3');
                                 <div class="mb-4"><?php echo apply_filters('the_content', $item['description']); ?></div>
                             <?php endif; ?>
                             <?php if (!empty($item['link'])): ?>
-                                <a href="<?php echo $item['link']['url']; ?>" class="flex items-center"><?php echo $item['link']['title'] ?> <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition "></i></a>
+                                <a href="<?php echo $item['link']['url']; ?>" class="flex items-center text-button"><?php echo $item['link']['title'] ?> <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition "></i></a>
                             <?php endif; ?>
                         </div>
                     </div>
