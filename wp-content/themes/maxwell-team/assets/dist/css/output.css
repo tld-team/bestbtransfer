@@ -2019,8 +2019,6 @@ h4 span {
 
 .content-list-link ul {
   list-style-type: none !important;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   padding-left: 0px !important;
 }
 
@@ -2054,6 +2052,10 @@ h4 span {
 
 .content-list-link a:hover {
   text-decoration-line: underline;
+}
+
+.content-list-link p {
+  padding-bottom: 0.75rem;
 }
 
 .hover\:-translate-y-2:hover {
