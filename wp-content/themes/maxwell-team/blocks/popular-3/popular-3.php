@@ -10,7 +10,7 @@ $data = get_field('popular_3');
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>
-                <span><?php echo $data['top_title']; ?></span>
+                <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>

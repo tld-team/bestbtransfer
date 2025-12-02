@@ -3,6 +3,7 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('hero_1');
+
 $bg_image = get_image($data['bg_image']);
 
 $text_color = $data['text_color'] ?? '#fff';

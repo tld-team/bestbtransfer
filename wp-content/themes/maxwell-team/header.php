@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,61 @@
 </head>
 
 <body <?php body_class('font-body'); ?>>
-<?php wp_body_open(); ?>
-<!-- <div id="page" class="site"> -->
+	<?php wp_body_open(); ?>
+	<!-- <div id="page" class="site"> -->
 	<a class="skip-link screen-reader-text hidden" href="#primary"><?php esc_html_e('Skip to content', 'mma-future'); ?></a>
+
+	<?php $top_bar = get_field('top_bar', 'option'); ?>
+
+	<div class="bg-[#F6F6F6]">
+		<div class="flex flex-col md:flex-row justify-between items-center text-top_bar p-4 max-w-7xl mx-auto">
+			<?php if (!empty($top_bar)) : ?>
+				<div class="flex flex-col md:flex-row md:items-center md:space-x-8 mb-4 md:mb-0 w-full md:w-auto ">
+					<?php if (!empty($top_bar['address'])) : ?>
+						<div class="flex items-center space-x-2 mb-3 md:mb-0">
+							<i class="fas fa-map-marker-alt text-button"></i>
+							<div class="text-sm md:text-base"><?php echo apply_filters('the_content', $top_bar['address']); ?></div>
+						</div>
+					<?php endif; ?>
+
+					<?php if (!empty($top_bar['phone'])) : ?>
+						<!-- Phone -->
+						<div class="flex items-center space-x-2 mb-3 md:mb-0">
+							<i class="fas fa-phone text-button"></i>
+							<div class="flex flex-col">
+								<div class="text-sm md:text-base font-medium"><?php echo apply_filters('the_content', $top_bar['phone']); ?></div>
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<?php if (!empty($top_bar['work_time'])) : ?>
+						<!-- Hours -->
+						<div class="flex items-center space-x-2">
+							<i class="fas fa-clock text-button"></i>
+							<div class="flex flex-col">
+								<div class="text-sm md:text-base font-medium"><?php echo apply_filters('the_content', $top_bar['work_time']); ?></div>
+							</div>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
+
+			<?php $social_network = get_field('social_network', 'option'); ?>
+			<?php if (!empty($social_network)) : ?>
+				<!-- Right Section - Social Media Icons -->
+				<div class="flex items-center space-x-4">
+
+					<?php foreach ($social_network as $key => $media) : ?>
+						<?php if (!empty($media)) : ?>
+						<a href="<?php echo $media; ?>" class="text-button hover:text-button/20 transition-colors duration-200">
+							<i class="fab fa-<?php echo $key; ?>"></i>
+						</a>
+					<?php endif; ?>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
 
 	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white py-4 sm:py-3">
 		<div class="w-full mx-auto">
@@ -22,7 +74,7 @@
 					<div class="flex items-center">
 						<?php the_custom_logo(); ?>
 					</div>
-					
+
 					<!-- Desktop Menu -->
 					<div class="hidden md:flex items-center space-x-8">
 						<?php
@@ -30,13 +82,13 @@
 						$menu_items = wp_get_nav_menu_items('menu-1');
 						foreach ($menu_items as $item) {
 							if ($item->menu_item_parent == 0) {
-								$children = array_filter($menu_items, function($child) use ($item) {
+								$children = array_filter($menu_items, function ($child) use ($item) {
 									return $child->menu_item_parent == $item->ID;
 								});
-								
+
 								if (!empty($children)) {
 									// This is a dropdown item
-									?>
+						?>
 									<div class="dropdown relative">
 										<button class="flex items-center transition-colors font-medium">
 											<span><?php echo $item->title; ?></span>
@@ -50,19 +102,19 @@
 											<?php } ?>
 										</div>
 									</div>
-									<?php
+								<?php
 								} else {
 									// This is a simple menu item
-									?>
+								?>
 									<a href="<?php echo $item->url; ?>" class="transition-colors font-medium">
 										<?php echo $item->title; ?>
 									</a>
-									<?php
+						<?php
 								}
 							}
 						}
 						?>
-						
+
 						<!-- Language Selector -->
 						<div class="dropdown relative">
 							<button class="flex items-center transition-colors font-medium">
@@ -76,29 +128,29 @@
 								<a href="#" class="block px-4 py-2 hover:bg-teal-50">Français</a>
 							</div>
 						</div>
-						
+
 						<?php link_4(['url' => '#', 'title' => 'Call us +386 5 222 222']) ?>
 					</div>
-					
+
 					<!-- Mobile Menu Button -->
 					<button class="md:hidden text-white" id="menu4-toggle">
 						<i class="fas fa-bars text-xl"></i>
 					</button>
 				</div>
-		
+
 				<!-- Mobile Menu -->
 				<div class="mobile-menu md:hidden mt-4" id="menu4">
 					<div class="flex flex-col space-y-4 py-4">
 						<?php
 						foreach ($menu_items as $item) {
 							if ($item->menu_item_parent == 0) {
-								$children = array_filter($menu_items, function($child) use ($item) {
+								$children = array_filter($menu_items, function ($child) use ($item) {
 									return $child->menu_item_parent == $item->ID;
 								});
-								
+
 								if (!empty($children)) {
 									// Mobile dropdown
-									?>
+						?>
 									<div class="mobile-dropdown">
 										<button class="flex items-center justify-between w-full transition-colors py-2 font-medium" onclick="toggleMobileDropdown(this)">
 											<span><?php echo $item->title; ?></span>
@@ -110,19 +162,19 @@
 											<?php } ?>
 										</div>
 									</div>
-									<?php
+								<?php
 								} else {
 									// Simple mobile item
-									?>
+								?>
 									<a href="<?php echo $item->url; ?>" class="transition-colors py-2 font-medium">
 										<?php echo $item->title; ?>
 									</a>
-									<?php
+						<?php
 								}
 							}
 						}
 						?>
-						
+
 						<div class="pt-4 border-t border-gray-200 flex justify-between">
 							<!-- Language Selector -->
 							<div class="flex items-center">
@@ -133,9 +185,9 @@
 									<option>FR</option>
 								</select>
 							</div>
-							
+
 							<?php link_4(['url' => '#', 'title' => 'Call us +386 5 222 222']) ?>
-							
+
 						</div>
 					</div>
 				</div>

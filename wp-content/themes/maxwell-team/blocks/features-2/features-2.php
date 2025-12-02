@@ -23,7 +23,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
         <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div class="<?php echo $revers ? 'lg:order-2' : 'lg:order-1'; ?>">
                 <?php if (!empty($data['top_title'])) : ?>
-                <p class="text-base font-semibold tracking-wider text-blue-600 uppercase"><?php echo $data['top_title']; ?></p>
+                <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
                 
                 <?php if (!empty($data['title'])) : ?>
@@ -31,7 +31,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
                 <?php endif; ?>
                 
                 <?php if (!empty($data['content'])) : ?>
-                <div class="m-4"><?php echo apply_filters('the_content', $data['content']); ?></div>
+                <div class="my-4"><?php echo apply_filters('the_content', $data['content']); ?></div>
                 <?php endif; ?>
 
                 <?php if (!empty($data['link'])) : ?>

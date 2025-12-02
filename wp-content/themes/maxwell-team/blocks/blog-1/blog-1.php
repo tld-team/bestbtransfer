@@ -18,7 +18,7 @@ $bg_color = $data['bg_color'];
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) : ?>
-            <span class=""><?php echo $data['top_title']; ?></span>
+            <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             
             <?php if (!empty($data['title'])) : ?>

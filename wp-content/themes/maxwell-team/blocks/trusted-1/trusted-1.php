@@ -11,7 +11,7 @@ $data = get_field('trusted_1');
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) : ?>
-                <span class="font-semibold"><?php echo $data['top_title']; ?></span>
+                <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>
@@ -26,8 +26,8 @@ $data = get_field('trusted_1');
                 <?php foreach ($data['items'] as $item) : ?>
                     <div class="text-center p-6">
                         <?php if (!empty($item['icon'])) : ?>
-                            <div class="rounded-2xl flex items-center justify-center mx-auto w-16 h-16 bg-gradient-to-r from-primary to-blue-600 mb-6 shadow-md">
-                                <i class="fas fa-<?php echo $item['icon']; ?> text-white text-3xl"></i>
+                            <div class="rounded-2xl flex items-center justify-center mx-auto w-16 h-16">
+                                <i class="fas fa-<?php echo $item['icon']; ?> text-button text-3xl"></i>
                             </div>
                         <?php endif; ?>
                         <?php if (!empty($item['title'])) : ?>

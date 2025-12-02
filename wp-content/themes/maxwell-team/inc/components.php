@@ -34,7 +34,7 @@ function link_1($link, $class = '')
 function link_2($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="border-2 border-button text-white bg-button px-8 py-4 rounded-xl hover:bg-white hover:text-button transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></a>
+    <a href="<?php echo esc_url($link['url']); ?>" <?php echo $link['target'] ? 'target="_blank"' : ''; ?> class="border-2 border-button text-white bg-button px-4 py-2 rounded-xl hover:bg-white hover:text-button transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></a>
 <?php
 }
 
@@ -42,7 +42,7 @@ function link_2($link, $class = '')
 function link_3($link, $class = '')
 {
 ?>
-    <a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>" target="<?php echo $link['target']; ?>" class="inline-flex items-center rounded-xl border-2 border-button text-white bg-button px-8 py-4 hover:bg-transparent hover:text-button transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>" role="button">
+    <a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>" target="<?php echo $link['target']; ?>" class="inline-flex items-center rounded-xl border-2 border-button text-white bg-button px-4 py-2 hover:bg-transparent hover:text-button transition-all duration-300 flex items-center justify-center <?php echo esc_attr($class); ?>" role="button">
                     <?php echo $link['title']; ?>
                     <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />

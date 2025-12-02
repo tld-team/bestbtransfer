@@ -11,7 +11,7 @@ $data = get_field('faq_1');
 
         <div class="max-w-2xl mx-auto text-center">
             <?php if (!empty($data['top_title'])) : ?>
-                <p class="text-base font-semibold tracking-wider text-blue-600 uppercase"><?php echo $data['top_title']; ?></p>
+                <span class="maxwell-top-title"><?php echo $data['top_title']; ?></p>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
                 <h2 class="h2-responsive"><?php echo $data['title']; ?></h2>
