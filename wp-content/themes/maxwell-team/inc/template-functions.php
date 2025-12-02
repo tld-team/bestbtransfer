@@ -154,3 +154,105 @@ function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page =
     
     return $output;
 }
+
+
+function add_call_menu_icons() {
+    echo '
+    <style>
+        /* Stil za glavni meni ikonu */
+        .phone-float {
+            position: fixed;
+            bottom: 48px;
+			// left: 20px;
+            right: 20px;
+//             background-color: #007BFF;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+			background-color: #fff;
+            cursor: pointer;
+        }
+
+        .phone-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .call-icons {
+            position: fixed;
+            bottom: 122px;
+           	left: 20px;
+//          right: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .call-icons .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .call-icons .icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .call-icons .icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .icon.whatsapp {
+            background-color: #25D366;
+        }
+
+//         .icon.viber {
+//             background-color: #59267C;
+//         }
+    </style>
+
+    <div class="phone-float" id="phoneMenu">
+        <img src="http://tldteam.com/wp-content/uploads/2025/01/phone-call.png" alt="Phone" style="width: 30px; height: 30px;">
+    </div>
+    <div class="call-icons" id="callIcons">
+        <div class="icon whatsapp">
+            <a href="https://wa.me/381692784544?text=Zdravo!%20Imam%20pitanje%20u%20vezi%20sa%20vašim%20uslugama." target="_blank" style="display: flex;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+        <div class="icon viber">
+            <a  href="viber://chat?number=+381692784544&text=Pozdrav!%20Želeo%20bih%20više%20informacija." style="display: flex;">
+                <img src="http://tldteam.com/wp-content/uploads/2025/01/viber-call.png" alt="Viber">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const phoneMenu = document.getElementById("phoneMenu");
+            const callIcons = document.getElementById("callIcons");
+
+            phoneMenu.addEventListener("click", function() {
+                const isVisible = callIcons.style.display === "flex";
+                callIcons.style.display = isVisible ? "none" : "flex";
+            });
+        });
+    </script>
+    ';
+}
+add_action('wp_footer', 'add_call_menu_icons');
