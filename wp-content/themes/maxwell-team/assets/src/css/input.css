@@ -1,28 +1,3 @@
-/* styles/globals.css */
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
@@ -54,6 +29,30 @@
   font-style: normal;
   font-display: swap;
 }
+/* Font Awesome font-display fix */
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;  /* OVO JE KLJUČNO - promena iz block u swap */
+  src: url("../fontawesome/webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;  /* OVO JE KLJUČNO - promena iz block u swap */
+  src: url("../fontawesome/webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;  /* OVO JE KLJUČNO - promena iz block u swap */
+  src: url("../fontawesome/webfonts/fa-regular-400.woff2") format("woff2");
+}
 
 @layer base {
   body {
@@ -63,7 +62,12 @@
     color: theme('colors.body');
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: theme('fontFamily.heading');
     font-weight: 600;
     line-height: 1.2;
@@ -73,34 +77,35 @@
 
 /* styles/globals.css */
 @layer components {
+
   /* H1 Styles */
   .h1-responsive {
     @apply font-heading font-bold text-h1-mobile md:text-h1-tablet lg:text-h1-desktop;
   }
-  
+
   /* H2 Styles */
   .h2-responsive {
     @apply font-heading font-semibold text-h2-mobile md:text-h2-tablet lg:text-h2-desktop;
   }
-  
+
   /* H3 Styles */
   .h3-responsive {
     @apply font-heading font-semibold text-h3-mobile md:text-h3-tablet lg:text-h3-desktop;
   }
-  
+
   /* H4 Styles */
   .h4-responsive {
     @apply font-heading font-medium text-h4-mobile md:text-h4-tablet lg:text-h4-desktop;
   }
-  
+
   /* H5 Styles */
   .h5-responsive {
     @apply font-heading font-medium text-h5-mobile md:text-h5-tablet lg:text-h5-desktop;
   }
-  
+
   /* H6 Styles */
   .h6-responsive {
-    @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;    
+    @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;
   }
 
   /*
@@ -110,12 +115,15 @@
   h1 span {
     @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
   }
+
   h2 span {
     @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
   }
+
   h3 span {
     @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
   }
+
   h4 span {
     @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
   }
@@ -124,40 +132,48 @@
 }
 
 span.maxwell-top-title {
-    @apply text-button font-medium text-lg;
+  @apply text-button font-medium text-lg;
 }
+
 .nav-container {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
+
 .mobile-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
+
 .mobile-menu.open {
-    max-height: 500px;
+  max-height: 500px;
 }
+
 .nav-shadow {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
 .dropdown-content {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
+
 .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
+
 .mobile-dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
+
 .mobile-dropdown.open .mobile-dropdown-content {
-    max-height: 200px;
+  max-height: 200px;
 }
 
 @tailwind base;
@@ -165,28 +181,38 @@ span.maxwell-top-title {
 @tailwind utilities;
 
 .gradient-bg {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
 }
 
-.service-card, .tour-card {
-    transition: all 0.3s ease;
+.service-card,
+.tour-card {
+  transition: all 0.3s ease;
 }
 
-.service-card:hover, .tour-card:hover {
-    transform: translateY(-5px);
+.service-card:hover,
+.tour-card:hover {
+  transform: translateY(-5px);
 }
 
 .floating {
-    animation: floating 3s ease-in-out infinite;
+  animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
-    0% { transform: translate(0, 0px); }
-    50% { transform: translate(0, 10px); }
-    100% { transform: translate(0, -0px); }
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 10px);
+  }
+
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
-  /* 
+/* 
    * Styles for the list of links under the content list.
    * The list is displayed as a flex container with no spacing between items.
    * Each list item has padding and rounded corners.
@@ -194,26 +220,27 @@ span.maxwell-top-title {
    * The border is blue on hover and has a shadow on hover.
    * The text color is the same as the button text color.
    */
-  /* Stil za listu sa disc markerima */
-  .content-list-link ul {
-    @apply !list-none !pl-0;
-  }
+/* Stil za listu sa disc markerima */
+.content-list-link ul {
+  @apply !list-none !pl-0;
+}
 
-  /* Kreiranje custom disc markera */
-  .content-list-link ul li {
-    @apply relative pl-3 py-1;
-  }
-  
-  .content-list-link ul li::before {
-    content: '';
-    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-button;
-  }
+/* Kreiranje custom disc markera */
+.content-list-link ul li {
+  @apply relative pl-3 py-1;
+}
+
+.content-list-link ul li::before {
+  content: '';
+  @apply absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-button;
+}
 
 
-  /* Boja za sve linkove unutar .content-list-link */
-  .content-list-link a {
-    @apply !text-button hover:underline; 
-  }
-  .content-list-link p {
-    @apply pb-3;
-  }
+/* Boja za sve linkove unutar .content-list-link */
+.content-list-link a {
+  @apply !text-button hover:underline;
+}
+
+.content-list-link p {
+  @apply pb-3;
+}
