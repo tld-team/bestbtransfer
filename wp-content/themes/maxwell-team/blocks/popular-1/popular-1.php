@@ -55,7 +55,7 @@ $data = get_field('popular_1');
 
         <div class="text-center mt-12">
             <?php if ($data['link']) : ?>
-                <?php link_2($data['link'], 'btn-modern'); ?>
+                <?php link_inline_arrow($data['link']); ?>
             <?php endif; ?>
         </div>
     </div>
