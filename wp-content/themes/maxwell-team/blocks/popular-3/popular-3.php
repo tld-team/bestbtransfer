@@ -30,7 +30,7 @@ $data = get_field('popular_3');
                             <!-- Tag - gore desno -->
                             <?php if (!empty($item['tag'])): ?>
                                 <div class="absolute top-4 right-4">
-                                    <a href="<?php echo $item['tag']['url']; ?>" class="text-sm text-white bg-black bg-opacity-50 px-2 py-1 rounded-xl">
+                                    <a href="<?php echo $item['tag']['url']; ?>" class="text-sm text-white bg-black bg-opacity-50 px-2 py-1 rounded-xl" aria-label="View all <?php echo $item['tag']['title']; ?> tours">
                                         <?php echo $item['tag']['title']; ?>
                                     </a>
                                 </div>
