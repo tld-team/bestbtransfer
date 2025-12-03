@@ -51,13 +51,16 @@ $data = get_field('pricing_table');
 
                             <?php if (!empty($item['title'])) : ?>
                                 <tr class="bg-blue-50">
-                                    <td colspan="4" class="py-3 px-6 font-bold" style="color: #01123fff;">
-
+                                    <td colspan="4" class="py-3 px-6 font-bold " style="color: #01123fff;">
+                                        <div class="inline-flex items-center">
                                         <?php if (!empty($item['icon'])) : ?>
-                                            <i class="fas fa-<?php echo esc_attr($item['icon']); ?> mr-2"></i>
+                                            <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
+                                                <?php echo maxwell_render_svg($item['icon']['url'], 'mr-2 w-4 h-4'); ?>
+                                            <?php endif; ?>
                                         <?php endif; ?>
 
                                         <?php echo esc_html($item['title']); ?>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endif; ?>
@@ -97,7 +100,9 @@ $data = get_field('pricing_table');
                         <?php if (!empty($item['title'])) : ?>
                             <h3 class="font-bold text-lg mb-4" style="color: #01123fff;">
                                 <?php if (!empty($item['icon'])) : ?>
-                                    <i class="fas fa-<?php echo esc_attr($item['icon']); ?> mr-2"></i>
+                                    <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
+                                        <?php maxwell_render_svg($item['icon']['url']); ?>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                                 <?php echo esc_html($item['title']); ?>
                             </h3>

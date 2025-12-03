@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
@@ -11,35 +12,38 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function mma_future_body_classes( $classes ) {
+function mma_future_body_classes($classes)
+{
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+	if (! is_singular()) {
 		$classes[] = 'hfeed';
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	if (! is_active_sidebar('sidebar-1')) {
 		$classes[] = 'no-sidebar';
 	}
 
 	return $classes;
 }
-add_filter( 'body_class', 'mma_future_body_classes' );
+add_filter('body_class', 'mma_future_body_classes');
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function mma_future_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+function mma_future_pingback_header()
+{
+	if (is_singular() && pings_open()) {
+		printf('<link rel="pingback" href="%s">', esc_url(get_bloginfo('pingback_url')));
 	}
 }
-add_action( 'wp_head', 'mma_future_pingback_header' );
+add_action('wp_head', 'mma_future_pingback_header');
 
 
 
-function maxwell_block_category( $block_categories ) {
-	
+function maxwell_block_category($block_categories)
+{
+
 	$block_categories = array_merge(
 		array(
 			array(
@@ -49,11 +53,10 @@ function maxwell_block_category( $block_categories ) {
 		),
 		$block_categories
 	);
-	
+
 	return $block_categories;
-	
 }
-add_filter( 'block_categories_all', 'maxwell_block_category' );
+add_filter('block_categories_all', 'maxwell_block_category');
 
 
 /**
@@ -64,41 +67,42 @@ add_filter( 'block_categories_all', 'maxwell_block_category' );
  * @param int|null $post_id ID posta. Ako nije proslijeđen, uzima se trenutni post.
  * @return mixed Objekt primarne kategorije ili false ako nema primarne kategorije.
  */
-function get_primary_category($post_id = null) {
-    // Ako nije proslijeđen ID, uzmi trenutni post
-    if (empty($post_id)) {
-        $post_id = get_the_ID();
-    }
-    
-    // Provjeri da li Yoast postoji i ima li primarnu kategoriju
-    if (class_exists('WPSEO_Primary_Term')) {
-        $primary_term = new WPSEO_Primary_Term('category', $post_id);
-        $primary_category_id = $primary_term->get_primary_term();
-        
-        if ($primary_category_id) {
-            $primary_category = get_term($primary_category_id, 'category');
-            if (!is_wp_error($primary_category)) {
-                return [
+function get_primary_category($post_id = null)
+{
+	// Ako nije proslijeđen ID, uzmi trenutni post
+	if (empty($post_id)) {
+		$post_id = get_the_ID();
+	}
+
+	// Provjeri da li Yoast postoji i ima li primarnu kategoriju
+	if (class_exists('WPSEO_Primary_Term')) {
+		$primary_term = new WPSEO_Primary_Term('category', $post_id);
+		$primary_category_id = $primary_term->get_primary_term();
+
+		if ($primary_category_id) {
+			$primary_category = get_term($primary_category_id, 'category');
+			if (!is_wp_error($primary_category)) {
+				return [
 					'link' => get_term_link($primary_category),
 					'name' => $primary_category->name
 				];
-            }
-        }
-    }
-    
-    // Fallback: vrati prvu kategoriju ako nema primarne
-    $categories = wp_get_post_categories($post_id, array('number' => 1));
-    if (!empty($categories)) {
-        $category = get_term($categories[0], 'category');
-        if ($category) {
-            return [
+			}
+		}
+	}
+
+	// Fallback: vrati prvu kategoriju ako nema primarne
+	$categories = wp_get_post_categories($post_id, array('number' => 1));
+	if (!empty($categories)) {
+		$category = get_term($categories[0], 'category');
+		if ($category) {
+			return [
 				'link' => get_term_link($category),
 				'name' => $category->name
 			];
-        }
-    }
-    
-    return false;
+		}
+	}
+
+	return false;
 }
 
 /**
@@ -109,36 +113,37 @@ function get_primary_category($post_id = null) {
  * @param string $post_type Tip postova koji se vraća. Zadani je 'post'.
  * @return array Array sa ID-evima poslednjih postova. Ako nema postova, vraća prazan array.
  */
-function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page = 3, $posts_ids = array()) {
+function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page = 3, $posts_ids = array())
+{
 	if ($type == 'last') {
-			$args = array(
-				'post_type' => $post_type,
-				'post_status' => 'publish',
-				'posts_per_page' => $posts_per_page,
-				'orderby' => 'date',
-				'order' => 'DESC',
-			);
-		} elseif ($type == 'choose') {
-			$args = array(
-				'post_type' => $post_type,
-				'post_status' => 'publish',
-				'posts_per_page' => $posts_per_page,
-				'orderby' => 'date',
-				'order' => 'ASC',
-				'post__in' => $posts_ids,
-			);
-		}
-    
-    $query = new WP_Query($args);
+		$args = array(
+			'post_type' => $post_type,
+			'post_status' => 'publish',
+			'posts_per_page' => $posts_per_page,
+			'orderby' => 'date',
+			'order' => 'DESC',
+		);
+	} elseif ($type == 'choose') {
+		$args = array(
+			'post_type' => $post_type,
+			'post_status' => 'publish',
+			'posts_per_page' => $posts_per_page,
+			'orderby' => 'date',
+			'order' => 'ASC',
+			'post__in' => $posts_ids,
+		);
+	}
+
+	$query = new WP_Query($args);
 
 	$output = array();
-    
-    if ($query->have_posts()) {
+
+	if ($query->have_posts()) {
 		$key = 1;
-        while ($query->have_posts()) {
-            $query->the_post();
-            $output[$key]['id'] = get_the_ID();
-            $output[$key]['primary_category'] = get_primary_category(get_the_ID());
+		while ($query->have_posts()) {
+			$query->the_post();
+			$output[$key]['id'] = get_the_ID();
+			$output[$key]['primary_category'] = get_primary_category(get_the_ID());
 			$output[$key]['title'] = get_the_title();
 			$output[$key]['excerpt'] = get_the_excerpt();
 			$output[$key]['image'] = get_image(get_post_thumbnail_id());
@@ -149,23 +154,22 @@ function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page =
 			);
 			$output[$key]['date'] = get_the_date();
 			$key++;
-        }
-    }
-    
-    return $output;
+		}
+	}
+
+	return $output;
 }
 
 
-function add_call_menu_icons() {
-    echo '
+function add_call_menu_icons()
+{
+	echo '
     <style>
         /* Stil za glavni meni ikonu */
         .phone-float {
             position: fixed;
             bottom: 48px;
-			// left: 20px;
             right: 20px;
-//             background-color: #007BFF;
             color: white;
             border-radius: 50%;
             width: 60px;
@@ -187,8 +191,7 @@ function add_call_menu_icons() {
         .call-icons {
             position: fixed;
             bottom: 122px;
-           	left: 20px;
-//          right: 20px;
+            right: 20px;
             display: none;
             flex-direction: column;
             gap: 10px;
@@ -221,23 +224,23 @@ function add_call_menu_icons() {
             background-color: #25D366;
         }
 
-//         .icon.viber {
-//             background-color: #59267C;
-//         }
+        .icon.viber {
+            background-color: #e2c2f8ff;
+        }
     </style>
 
     <div class="phone-float" id="phoneMenu">
-        <img src="http://tldteam.com/wp-content/uploads/2025/01/phone-call.png" alt="Phone" style="width: 30px; height: 30px;">
+        <img src="/wp-content/themes/maxwell-team/assets/dist/icon/phone.svg" alt="Phone" style="width: 30px; height: 30px;">
     </div>
     <div class="call-icons" id="callIcons">
         <div class="icon whatsapp">
             <a href="https://wa.me/381692784544?text=Zdravo!%20Imam%20pitanje%20u%20vezi%20sa%20vašim%20uslugama." target="_blank" style="display: flex;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                <img src="/wp-content/themes/maxwell-team/assets/dist/icon/whatsapp.svg" alt="WhatsApp">
             </a>
         </div>
         <div class="icon viber">
             <a  href="viber://chat?number=+381692784544&text=Pozdrav!%20Želeo%20bih%20više%20informacija." style="display: flex;">
-                <img src="http://tldteam.com/wp-content/uploads/2025/01/viber-call.png" alt="Viber">
+                <img src="/wp-content/themes/maxwell-team/assets/dist/icon/viber.svg" alt="Viber">
             </a>
         </div>
     </div>

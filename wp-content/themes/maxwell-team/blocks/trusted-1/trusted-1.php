@@ -27,7 +27,14 @@ $data = get_field('trusted_1');
                     <div class="text-center p-6">
                         <?php if (!empty($item['icon'])) : ?>
                             <div class="rounded-2xl flex items-center justify-center mx-auto w-16 h-16">
-                                <i class="fas fa-<?php echo $item['icon']; ?> text-button text-3xl"></i>
+                                <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) {
+                                    echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 text-button');
+                                } else {
+                                ?>
+                                    <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-16 h-16">
+                                <?php
+
+                                } ?>
                             </div>
                         <?php endif; ?>
                         <?php if (!empty($item['title'])) : ?>

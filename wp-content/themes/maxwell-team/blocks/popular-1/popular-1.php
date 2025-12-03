@@ -44,7 +44,7 @@ $data = get_field('popular_1');
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($item['link']) : ?>
-                                    <?php link_5($item['link'], 'btn-link-5'); ?>
+                                    <?php link_inline_arrow($item['link']); ?>
                                 <?php endif; ?>
                             </div>
                         </div>

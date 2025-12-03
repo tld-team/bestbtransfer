@@ -5,7 +5,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('service_2');
 $right = $data['right'];
 ?>
-<section class="py-8 sm:py-12 lg:py-18 bg-gray-50">
+<section class="service-2 py-8 sm:py-12 lg:py-18 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) { ?>
@@ -31,15 +31,16 @@ $right = $data['right'];
                                 alt="<?php echo $item['image']['alt']; ?>"
                                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             <div class="text-content relative z-10 p-6 text-white flex flex-col justify-between h-full transition-opacity duration-300">
-                                <div>
-                                    <i class="fas fa-<?php echo $item['icon']; ?> text-3xl mb-4 text-white/90"></i>
+                                <div class="inline-flex item-center">
+                                    <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) {
+                                        echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6 mb-4 mr-2 text-white/90');
+                                    } ?>
                                     <h3 class="text-xl text-white font-bold mb-2"><?php echo $item['title']; ?></h3>
                                 </div>
 
-                                <a href="#" class="inline-flex items-center font-semibold group/link text-white/90 hover:text-white">
-                                    <?php echo $item['link']['title']; ?>
-                                    <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i>
-                                </a>
+                                <?php if (!empty($item['link'])) : ?>
+                                    <?php link_inline_arrow($item['link'], 'font-semibold text-white/90'); ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -60,8 +61,10 @@ $right = $data['right'];
                         <?php foreach ($right['items'] as $item) : ?>
                             <div class="flex items-center">
                                 <?php if (!empty($item['icon'])) : ?>
-                                    <div class="flex-shrink-0 w-12 h-12 bg-button/10 rounded-xl flex items-center justify-center mr-4">
-                                        <i class="fas fa-<?php echo $item['icon']; ?> text-button text-xl"></i>
+                                    <div class="flex-shrink-0 w-14 h-14 bg-button/10 rounded-xl flex items-center justify-center mr-4">
+                                        <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) {
+                                            echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6 text-button');
+                                        } ?>
                                     </div>
                                 <?php endif; ?>
                                 <div>
