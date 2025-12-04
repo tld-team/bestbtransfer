@@ -1992,17 +1992,9 @@ h4 span {
 
 /* Boja za sve linkove unutar .content-list-link */
 
-.content-list-link a {
-  color: #af4b03ff !important;
-}
-
-.content-list-link a:hover {
-  text-decoration-line: underline;
-}
-
-.content-list-link p {
-  padding-bottom: 0.75rem;
-}
+/* .content-list-link a {
+  @apply !text-button hover:underline;
+} */
 
 .hover\:-translate-y-2:hover {
   --tw-translate-y: -0.5rem;

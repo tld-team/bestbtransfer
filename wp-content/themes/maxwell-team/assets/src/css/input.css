@@ -195,10 +195,6 @@
 
 
 /* Boja za sve linkove unutar .content-list-link */
-.content-list-link a {
+/* .content-list-link a {
   @apply !text-button hover:underline;
-}
-
-.content-list-link p {
-  @apply pb-3;
-}
+} */
