@@ -24,7 +24,8 @@ $text_color = $data['text_color'] ?? '#fff';
         <!-- Background Image -->
         <img src="<?php echo esc_url($bg_image['url']); ?>" 
              alt="<?php echo esc_attr($bg_image['alt'] ?? ''); ?>"
-             srcset="<?php echo esc_url($bg_image['srcset']); ?>"
+             srcset="<?php echo $bg_image['srcset']; ?>"
+             sizes="100vw"
              class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
         <?php endif; ?>
     
