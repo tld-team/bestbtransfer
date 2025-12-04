@@ -107,10 +107,6 @@
 
 }
 
-span.maxwell-top-title {
-  @apply text-button font-medium text-lg;
-}
-
 .nav-container {
   transition: all 0.3s ease;
 }
@@ -172,20 +168,6 @@ span.maxwell-top-title {
 
 .floating {
   animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-
-  50% {
-    transform: translate(0, 10px);
-  }
-
-  100% {
-    transform: translate(0, -0px);
-  }
 }
 
 /* 

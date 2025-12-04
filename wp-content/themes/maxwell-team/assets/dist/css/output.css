@@ -46,58 +46,7 @@
   font-display: swap;
 }
 
-/* Font Awesome font-display fix */
-
-@font-face {
-  font-family: 'Font Awesome 6 Brands';
-
-  font-style: normal;
-
-  font-weight: 400;
-
-  font-display: swap;
-
-  /* OVO JE KLJUČNO - promena iz block u swap */
-
-  src: url("../fontawesome/webfonts/fa-brands-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'Font Awesome 6 Free';
-
-  font-style: normal;
-
-  font-weight: 900;
-
-  font-display: swap;
-
-  /* OVO JE KLJUČNO - promena iz block u swap */
-
-  src: url("../fontawesome/webfonts/fa-solid-900.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'Font Awesome 6 Free';
-
-  font-style: normal;
-
-  font-weight: 400;
-
-  font-display: swap;
-
-  /* OVO JE KLJUČNO - promena iz block u swap */
-
-  src: url("../fontawesome/webfonts/fa-regular-400.woff2") format("woff2");
-}
-
 /* styles/globals.css */
-
-span.maxwell-top-title {
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 500;
-  color: #af4b03ff;
-}
 
 .nav-container {
   transition: all 0.3s ease;
@@ -1095,10 +1044,6 @@ h4 span {
   display: none;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-14 {
   height: 3.5rem;
 }
@@ -1141,10 +1086,6 @@ h4 span {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .w-14 {
@@ -1428,11 +1369,6 @@ h4 span {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
 }
 
 .bg-green-600 {
@@ -2016,20 +1952,6 @@ h4 span {
   animation: floating 3s ease-in-out infinite;
 }
 
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-
-  50% {
-    transform: translate(0, 10px);
-  }
-
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
 /* 
    * Styles for the list of links under the content list.
    * The list is displayed as a flex container with no spacing between items.
@@ -2129,11 +2051,6 @@ h4 span {
 .hover\:bg-purple-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(126 34 206 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-red-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-red-700:hover {
