@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Montserrat';
 
-  src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  src: url('../fonts/Montserrat/static/Montserrat-Bold.woff2') format('woff2');
 
   font-weight: 700;
 
@@ -13,7 +13,7 @@
 @font-face {
   font-family: 'Roboto';
 
-  src: url('../fonts/Roboto/static/Roboto-Regular.ttf') format('truetype');
+  src: url('../fonts/Roboto/static/Roboto-Regular.woff2') format('woff2');
 
   font-weight: 400;
 
@@ -25,7 +25,7 @@
 @font-face {
   font-family: 'Roboto';
 
-  src: url('../fonts/Roboto/static/Roboto-Medium.ttf') format('truetype');
+  src: url('../fonts/Roboto/static/Roboto-Medium.woff2') format('woff2');
 
   font-weight: 500;
 
@@ -37,7 +37,7 @@
 @font-face {
   font-family: 'Roboto';
 
-  src: url('../fonts/Roboto/static/Roboto-Bold.ttf') format('truetype');
+  src: url('../fonts/Roboto/static/Roboto-Bold.woff2') format('woff2');
 
   font-weight: 700;
 
