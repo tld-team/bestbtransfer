@@ -39,7 +39,7 @@ $data = get_field('popular_3');
                             <!-- Naslov - dole levo -->
                             <?php if (!empty($item['title'])): ?>
                                 <div class="absolute bottom-0 left-0 w-full">
-                                    <h3 class="font-semibold text-lg text-white bg-white bg-opacity-20 backdrop-blur-sm px-3 py-2 rounded">
+                                    <h3 class="font-semibold text-lg text-white bg-dark bg-opacity-20 backdrop-blur-md px-3 py-2 rounded">
                                         <?php echo $item['title']; ?>
                                     </h3>
                                 </div>
