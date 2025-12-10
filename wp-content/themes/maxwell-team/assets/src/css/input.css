@@ -6,7 +6,7 @@
 /* OPTIMIZOVANI FONTOVI - local() + woff2 */
 @font-face {
   font-family: 'Montserrat';
-  src: 
+  src:
     local('Montserrat Bold'),
     local('Montserrat-Bold'),
     url('../fonts/Montserrat/static/Montserrat-Bold.woff2') format('woff2');
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: 
+  src:
     local('Roboto Regular'),
     local('Roboto-Regular'),
     url('../fonts/Roboto/static/Roboto-Regular.woff2') format('woff2');
@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: 
+  src:
     local('Roboto Medium'),
     local('Roboto-Medium'),
     url('../fonts/Roboto/static/Roboto-Medium.woff2') format('woff2');
@@ -39,7 +39,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: 
+  src:
     local('Roboto Bold'),
     local('Roboto-Bold'),
     url('../fonts/Roboto/static/Roboto-Bold.woff2') format('woff2');
@@ -55,7 +55,7 @@
     font-weight: 400;
     font-size: 1rem;
     color: theme('colors.body');
-    background-color: #F2F0EE;
+    background-color: #F2F0EE !important;
   }
 
   h1,
@@ -63,7 +63,7 @@
   h3,
   h4,
   h5,
- h6 {
+  h6 {
     font-family: theme('fontFamily.heading');
     font-weight: 600;
     line-height: 1.2;
@@ -73,6 +73,7 @@
 
 /* styles/globals.css */
 @layer components {
+
   /* H1 Styles */
   .h1-responsive {
     @apply font-heading font-bold text-h1-mobile md:text-h1-tablet lg:text-h1-desktop;
@@ -209,9 +210,12 @@
 }
 
 @keyframes floating {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -219,6 +223,6 @@
 
 .maxwell-top-title {
   @apply px-4 py-2 bg-['#FAF5EB'] rounded-xl text-secondary font-medium mb-4;
-  box-shadow: 
+  box-shadow:
     inset 0 0 30px rgb(250, 245, 235)
 }
