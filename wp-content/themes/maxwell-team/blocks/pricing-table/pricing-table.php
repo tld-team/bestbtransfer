@@ -22,7 +22,7 @@ $data = get_field('pricing_table');
 
 <!-- Pricing Table -->
 <div class="py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
-    <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
