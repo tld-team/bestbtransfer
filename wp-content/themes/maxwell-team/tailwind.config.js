@@ -11,11 +11,10 @@ module.exports = {
     extend: {
       // Boje
       colors: {
-        primary: '#01123fff',
-        body: '#4b4b4b',
-        secondary: '#f59e0b',
-        button: '#af4b03ff',
-        top_bar: '#9BA4AE'
+        primary: '#1B294B',
+        body: '#6B7280',
+        secondary: '#CC9933',
+        button: '#BC8F35'
       },
       fontFamily: {
         body: ['Roboto', 'sans-serif'],

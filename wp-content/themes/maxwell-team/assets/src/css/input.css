@@ -55,6 +55,7 @@
     font-weight: 400;
     font-size: 1rem;
     color: theme('colors.body');
+    background-color: #F2F0EE;
   }
 
   h1,
@@ -214,4 +215,10 @@
   50% {
     transform: translateY(-10px);
   }
+}
+
+.maxwell-top-title {
+  @apply px-4 py-2 bg-['#FAF5EB'] rounded-xl text-secondary font-medium mb-4;
+  box-shadow: 
+    inset 0 0 30px rgb(250, 245, 235)
 }

@@ -16,13 +16,13 @@
 
 	<?php $top_bar = get_field('top_bar', 'option'); ?>
 
-	<div class="bg-[#F6F6F6] md:block hidden">
-		<div class="flex flex-col md:flex-row justify-between items-center text-top_bar p-4 max-w-7xl mx-auto">
+	<div class="bg-primary text-white md:block hidden">
+		<div class="flex flex-col md:flex-row justify-between items-center p-2 max-w-7xl mx-auto">
 			<?php if (!empty($top_bar)) : ?>
 				<div class="flex flex-col md:flex-row md:items-center md:space-x-8 mb-4 md:mb-0 w-full md:w-auto ">
 					<?php if (!empty($top_bar['address'])) : ?>
-						<div class="flex items-center space-x-2 mb-3 md:mb-0">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4 text-button">
+						<div class="flex items-center space-x-2 mb-3 md:mb-0 hover:text-secondary">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4">
 								<path fill="currentColor" d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z" />
 							</svg>
 							<div class="text-sm md:text-base"><?php echo apply_filters('the_content', $top_bar['address']); ?></div>
@@ -31,8 +31,8 @@
 
 					<?php if (!empty($top_bar['phone'])) : ?>
 						<!-- Phone -->
-						<div class="flex items-center space-x-2 mb-3 md:mb-0">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 text-button"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. -->
+						<div class="flex items-center space-x-2 mb-3 md:mb-0 hover:text-secondary">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
 								<path fill="currentColor" d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z" />
 							</svg>
 
@@ -44,8 +44,8 @@
 
 					<?php if (!empty($top_bar['work_time'])) : ?>
 						<!-- Hours -->
-						<div class="flex items-center space-x-2">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 text-button"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. -->
+						<div class="flex items-center space-x-2 hover:text-secondary">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
 								<path fill="currentColor" d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
 							</svg>
 							<div class="flex flex-col">
@@ -66,7 +66,7 @@
 
 							$svg_path = get_template_directory_uri() . '/assets/dist/icon/' . $key . '.svg';
 						?>
-							<a href="<?php echo $media; ?>" class="text-button hover:text-button/20 transition-colors duration-200">
+							<a href="<?php echo $media; ?>" class="hover:text-secondary hover:scale-110 transition-all duration-300">
 								<?php if (!empty($svg_path)): ?>
 									<?php echo maxwell_render_svg($svg_path, 'w-4 h-4'); ?>
 								<?php endif; ?>
@@ -78,7 +78,7 @@
 		</div>
 	</div>
 
-	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white py-4 sm:py-3">
+	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white py-4 sm:py-3 bg-[#F3F4F5] shadow-sm border-b border-border/50">
 		<div class="w-full mx-auto">
 			<nav class="nav-container px-4">
 				<div class="flex items-center justify-between">

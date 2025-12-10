@@ -288,7 +288,7 @@ function add_inline_contact()
 				$phone_formatted = preg_replace('/[^0-9+]/', '', $phone_number);
 			?>
 				<a href="tel:<?php echo esc_attr($phone_formatted); ?>"
-					class="group inline-flex items-center gap-2 px-3 py-2 hover:bg-button-50 transition-all duration-200 text-sm font-medium">
+					class="group inline-flex items-center gap-2 pr-3 py-2 hover:bg-button-50 transition-all duration-200 text-sm font-medium">
 					<div class="!w-8 !h-8 rounded-full flex items-center justify-center group-hover:bg-button/20 group-hover:text-button transition-colors duration-200">
 
 						<?php if (!empty($contact_options['phone_icon']['subtype'] == 'svg+xml')) {
@@ -310,7 +310,7 @@ function add_inline_contact()
 			?>
 				<a href="https://wa.me/<?php echo esc_attr($whatsapp_formatted); ?>?text=<?php echo urlencode('Zdravo! Imam pitanje u vezi sa vašim uslugama.'); ?>"
 					target="_blank"
-					class="group inline-flex items-center gap-2 px-3 py-2 bg-white text-green-600 hover:bg-green-50 transition-all duration-200 text-sm font-medium">
+					class="group inline-flex items-center gap-2 pr-3 py-2 bg-white text-green-600 hover:bg-green-50 transition-all duration-200 text-sm font-medium">
 					<div class="!w-8 !h-8 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-600 group-hover:text-green-50 transition-colors duration-200">
 
 						<?php if (!empty($contact_options['whatsapp_icon']['subtype'] == 'svg+xml')) {
@@ -331,7 +331,7 @@ function add_inline_contact()
 				$viber_formatted = preg_replace('/[^0-9+]/', '', $viber_number);
 			?>
 				<a href="viber://chat?number=<?php echo esc_attr($viber_formatted); ?>&text=<?php echo urlencode('Pozdrav! Želeo bih više informacija.'); ?>"
-					class="group inline-flex items-center gap-2 px-3 py-2 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-all duration-200 text-sm font-medium">
+					class="group inline-flex items-center gap-2 pr-3 py-2 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-all duration-200 text-sm font-medium">
 					<div class="!w-8 !h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-600 group-hover:text-purple-50 transition-colors duration-200">
 
 						<?php if (!empty($contact_options['viber_icon']['subtype'] == 'svg+xml')) {
