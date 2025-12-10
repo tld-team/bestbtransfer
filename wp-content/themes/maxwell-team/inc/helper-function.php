@@ -16,28 +16,40 @@ function get_image($image_id): array {
     ];
 }
 
+
+/**
+ * Renders an SVG image.
+ *
+ * This function takes an URL or path to an SVG image and returns the SVG content
+ * with optional classes and aria-label added.
+ *
+ * @param string $svg_url The URL or path to the SVG image.
+ * @param string $classes Optional. The classes to add to the SVG element.
+ * @param string $aria_label Optional. The aria-label attribute for the SVG element.
+ * @return string The SVG content with optional classes and aria-label added.
+ */
 function maxwell_render_svg($svg_url, $classes = '', $aria_label = '') {
+    // Check if the URL is empty
     if (empty($svg_url)) {
         return '';
     }
     
-    // Proveravamo da li je URL
+    // Check if the URL is valid
     if (!filter_var($svg_url, FILTER_VALIDATE_URL)) {
         return '';
     }
     
-    // Dobijamo putanju fajla ako je lokalni URL
+    // If the URL is local, convert it to a file path
     $wp_upload_dir = wp_upload_dir();
     $site_url = site_url();
     
-    // Ako je lokalni fajl, koristimo file_get_contents
-    // Konvertujemo URL u lokalnu putanju
     $file_path = str_replace($site_url, ABSPATH, $svg_url);
     
+    // If the file exists, get its content
     if (file_exists($file_path)) {
         $svg_content = file_get_contents($file_path);
     } else {
-        // Pokušaj preko wp_remote_get za bilo koji URL
+        // If it's not a local file, try to get it via wp_remote_get
         $response = wp_remote_get($svg_url);
         
         if (is_wp_error($response)) {
@@ -48,12 +60,12 @@ function maxwell_render_svg($svg_url, $classes = '', $aria_label = '') {
     }
 
     
-    // Proveravamo da li je SVG
+    // Check if the content is an SVG
     if (strpos($svg_content, '<svg') === false) {
         return '';
     }
     
-    // Dodajemo klase ako postoje
+    // Add classes if provided
     if (!empty($classes)) {
         $svg_content = preg_replace(
             '/<svg([^>]*)>/',
@@ -62,18 +74,7 @@ function maxwell_render_svg($svg_url, $classes = '', $aria_label = '') {
         );
     }
     
-    // // Dodajemo ARIA atribute
-    // if (!empty($aria_label)) {
-    //     $svg_content = preg_replace(
-    //         '/<svg([^>]*)>/',
-    //         '<svg$1 aria-label="' . esc_attr($aria_label) . '" role="img">',
-    //         $svg_content
-    //     );
-    // } else {
-    //     $svg_content = str_replace('<svg', '<svg aria-hidden="true"', $svg_content);
-    // }
-    
-    // Dodajemo focusable="false" za IE
+    // Add focusable="false" for IE
     $svg_content = str_replace('<svg', '<svg focusable="false"', $svg_content);
     
     return $svg_content;

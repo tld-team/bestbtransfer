@@ -22,7 +22,7 @@ $data = get_field('pricing_table');
 
 <!-- Pricing Table -->
 <div class="py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
-    <div class="max-w-5xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
@@ -39,10 +39,10 @@ $data = get_field('pricing_table');
             <table class="w-full">
                 <thead>
                     <tr class="text-white" style="background-color: #01123fff;">
-                        <th class="py-4 px-6 text-left font-semibold sticky-header"><?php echo esc_html($data['header']['route']); ?></th>
-                        <th class="py-4 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['distance']); ?></th>
-                        <th class="py-4 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['price']); ?></th>
-                        <th class="py-4 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['reserve']); ?></th>
+                        <th class="py-2 px-6 text-left font-semibold sticky-header"><?php echo esc_html($data['header']['route']); ?></th>
+                        <th class="py-2 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['distance']); ?></th>
+                        <th class="py-2 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['price']); ?></th>
+                        <th class="py-2 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['reserve']); ?></th>
                     </tr>
                 </thead>
                 <?php if ($data['items']) : ?>
@@ -51,15 +51,15 @@ $data = get_field('pricing_table');
 
                             <?php if (!empty($item['title'])) : ?>
                                 <tr class="bg-blue-50">
-                                    <td colspan="4" class="py-3 px-6 font-bold " style="color: #01123fff;">
+                                    <td colspan="4" class="py-2 px-6 font-bold " style="color: #01123fff;">
                                         <div class="inline-flex items-center">
-                                        <?php if (!empty($item['icon'])) : ?>
-                                            <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                                <?php echo maxwell_render_svg($item['icon']['url'], 'mr-2 w-4 h-4'); ?>
+                                            <?php if (!empty($item['icon'])) : ?>
+                                                <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
+                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'mr-2 w-4 h-4'); ?>
+                                                <?php endif; ?>
                                             <?php endif; ?>
-                                        <?php endif; ?>
 
-                                        <?php echo esc_html($item['title']); ?>
+                                            <?php echo esc_html($item['title']); ?>
                                         </div>
                                     </td>
                                 </tr>
@@ -67,22 +67,24 @@ $data = get_field('pricing_table');
                             <?php if (!empty($item['data'])) : ?>
                                 <?php foreach ($item['data'] as $route) : ?>
                                     <tr class="hover:bg-gray-50 transition-colors">
-                                        <td class="py-4 px-6">
-                                            <div class="font-medium"><?php echo esc_html($route['route']); ?></div>
+                                        <td class="px-6">
+                                            <div><?php echo esc_html($route['route']); ?></div>
                                         </td>
-                                        <td class="py-4 px-6 text-center">
+                                        <td class="px-6 text-center">
                                             <?php if (!empty($route['distance'])) : ?>
-                                                <div class="text-gray-700">~<?php echo esc_html($route['distance']); ?></div>
+                                                <span>~<?php echo esc_html($route['distance']); ?></span>
                                             <?php endif; ?>
                                             <?php if (!empty($route['time'])) : ?>
-                                                <div class="text-sm text-gray-500">~<?php echo esc_html($route['time']); ?></div>
+                                                <span class="text-sm"> / ~<?php echo esc_html($route['time']); ?></span>
                                             <?php endif; ?>
                                         </td>
-                                        <td class="py-4 px-6 text-center">
-                                            <div class="font-bold text-xl" style="color: #01123fff;"><?php echo esc_html($route['price']); ?></div>
-                                        </td>
-                                        <td class="py-4 px-6 text-center">
-                                            <?php link_2(['title' => 'Rezerviraj', 'url' => '#']); ?>
+                                        <?php if (!empty($route['price'])): ?>
+                                            <td class="px-6 text-center">
+                                                <div class="font-bold" style="color: #01123fff;"><?php echo esc_html($route['price']); ?></div>
+                                            </td>
+                                        <?php endif; ?>
+                                        <td class="px-6 text-center">
+                                            <?php add_inline_contact(); ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -116,7 +118,7 @@ $data = get_field('pricing_table');
                                     <div class="flex justify-between items-center mb-3">
                                         <span class="font-bold text-lg" style="color: #01123fff;"><?php echo esc_html($route['price']); ?></span>
                                     </div>
-                                    <?php link_2(['title' => 'Rezerviraj', 'url' => '#']); ?>
+                                    <?php add_inline_contact(); ?>
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>

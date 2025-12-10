@@ -259,3 +259,96 @@ function add_call_menu_icons()
     ';
 }
 add_action('wp_footer', 'add_call_menu_icons');
+
+
+/**
+ * Adds inline contact table to the page.
+ *
+ * Retrieves phone numbers from ACF options and displays them in a table.
+ * The table consists of rows for phone, WhatsApp, and Viber. Each row
+ * contains an icon, the name of the service, and a link to call or send
+ * a message using the corresponding app.
+ *
+ * @return void
+ */
+function add_inline_contact()
+{
+	// Preuzmi brojeve telefona iz ACF opcija
+
+	$contact_options = get_field('contact_options', 'option');
+	$phone_number = $contact_options['phone'];
+	$whatsapp_number = $contact_options['whatsapp'];
+	$viber_number = $contact_options['viber'];
+
+?>
+	<?php if ($phone_number || $whatsapp_number || $viber_number) : ?>
+		<div class="inline-flex items-center gap-2">
+
+			<?php if ($phone_number) :
+				$phone_formatted = preg_replace('/[^0-9+]/', '', $phone_number);
+			?>
+				<a href="tel:<?php echo esc_attr($phone_formatted); ?>"
+					class="group inline-flex items-center gap-2 px-3 py-2 hover:bg-button-50 transition-all duration-200 text-sm font-medium">
+					<div class="!w-8 !h-8 rounded-full flex items-center justify-center group-hover:bg-button/20 group-hover:text-button transition-colors duration-200">
+
+						<?php if (!empty($contact_options['phone_icon']['subtype'] == 'svg+xml')) {
+							echo maxwell_render_svg($contact_options['phone_icon']['url'], 'w-7 h-7 p-1');
+						} else {
+						?>
+							<img src="/wp-content/themes/maxwell-team/assets/dist/icon/phone.svg" alt="Telefon" class="w-4 h-4 group-hover:brightness-0 group-hover:invert">
+						<?php
+
+						} ?>
+
+					</div>
+					<span>Phone</span>
+				</a>
+			<?php endif; ?>
+
+			<?php if ($whatsapp_number) :
+				$whatsapp_formatted = preg_replace('/[^0-9]/', '', $whatsapp_number);
+			?>
+				<a href="https://wa.me/<?php echo esc_attr($whatsapp_formatted); ?>?text=<?php echo urlencode('Zdravo! Imam pitanje u vezi sa vašim uslugama.'); ?>"
+					target="_blank"
+					class="group inline-flex items-center gap-2 px-3 py-2 bg-white text-green-600 hover:bg-green-50 transition-all duration-200 text-sm font-medium">
+					<div class="!w-8 !h-8 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-600 group-hover:text-green-50 transition-colors duration-200">
+
+						<?php if (!empty($contact_options['whatsapp_icon']['subtype'] == 'svg+xml')) {
+							echo maxwell_render_svg($contact_options['whatsapp_icon']['url'], 'w-7 h-7 p-1');
+						} else {
+						?>
+							<img src="/wp-content/themes/maxwell-team/assets/dist/icon/phone.svg" alt="Telefon" class="w-4 h-4 group-hover:brightness-0 group-hover:invert">
+						<?php
+
+						} ?>
+
+					</div>
+					<span>WhatsApp</span>
+				</a>
+			<?php endif; ?>
+
+			<?php if ($viber_number) :
+				$viber_formatted = preg_replace('/[^0-9+]/', '', $viber_number);
+			?>
+				<a href="viber://chat?number=<?php echo esc_attr($viber_formatted); ?>&text=<?php echo urlencode('Pozdrav! Želeo bih više informacija.'); ?>"
+					class="group inline-flex items-center gap-2 px-3 py-2 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-all duration-200 text-sm font-medium">
+					<div class="!w-8 !h-8 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-600 group-hover:text-purple-50 transition-colors duration-200">
+
+						<?php if (!empty($contact_options['viber_icon']['subtype'] == 'svg+xml')) {
+							echo maxwell_render_svg($contact_options['viber_icon']['url'], 'w-7 h-7 p-1');
+						} else {
+						?>
+							<img src="/wp-content/themes/maxwell-team/assets/dist/icon/viber.svg" alt="Viber" class="w-4 h-4 group-hover:brightness-0 group-hover:invert">
+						<?php
+
+						} ?>
+
+					</div>
+					<span>Viber</span>
+				</a>
+			<?php endif; ?>
+
+		</div>
+	<?php endif; ?>
+<?php
+}
