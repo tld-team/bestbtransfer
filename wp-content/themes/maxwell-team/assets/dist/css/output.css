@@ -706,48 +706,137 @@ h1,
 
 /* Gradient styles za heading spans */
 
-h1 span {
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+h1.h1-responsive span {
+  animation: gradient 3s ease infinite;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #9ca3af var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(156 163 175 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #CC9933 var(--tw-gradient-to-position) !important;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+          background-clip: text;
+  --tw-text-opacity: 1 !important;
+  color: rgb(204 153 51 / var(--tw-text-opacity, 1)) !important;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+h1.h1-responsive span:hover {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+h2.h2-responsive span {
+  animation: gradient 3s ease infinite;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
+  background-size: 200% auto;
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
 }
 
-h2 span {
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+h2.h2-responsive span:hover {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+h3.h3-responsive span {
+  animation: gradient 3s ease infinite;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
+  background-size: 200% auto;
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
 }
 
-h3 span {
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+h3.h3-responsive span:hover {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+h4.h4-responsive span {
+  animation: gradient 3s ease infinite;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
+  background-size: 200% auto;
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
 }
 
-h4 span {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+h4.h4-responsive span:hover {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .visible {

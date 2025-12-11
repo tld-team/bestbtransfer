@@ -105,20 +105,23 @@
   }
 
   /* Gradient styles za heading spans */
-  h1 span {
-    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
+  h1.h1-responsive span {
+    @apply bg-gradient-to-r from-gray-400 !to-secondary bg-clip-text !text-secondary animate-gradient bg-[length:200%_auto] hover:animate-pulse;
   }
 
-  h2 span {
-    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
+  h2.h2-responsive span {
+    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent 
+              animate-gradient bg-[length:200%_auto] hover:animate-pulse;
   }
 
-  h3 span {
-    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
+  h3.h3-responsive span {
+    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent 
+              animate-gradient bg-[length:200%_auto] hover:animate-pulse;
   }
 
-  h4 span {
-    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent;
+  h4.h4-responsive span {
+    @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent 
+              animate-gradient bg-[length:200%_auto] hover:animate-pulse;
   }
 }
 

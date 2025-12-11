@@ -88,6 +88,9 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.3s ease-out',
         'pulse-slow': 'pulse 3s infinite',
+        'gradient': 'gradient 3s ease infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'soft-pulse': 'softPulse 3s ease-in-out infinite',
       },
       backgroundImage: {
         'gradient-mma': 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)',
@@ -113,6 +116,24 @@ module.exports = {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        gradient: {
+          '0%, 100%': {
+            'background-position': '0% 50%'
+          },
+          '50%': {
+            'background-position': '100% 50%'
+          }
+        },
+        softPulse: {
+          '0%, 100%': { 
+            opacity: '1',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            opacity: '0.9',
+            transform: 'scale(1.01)'
+          }
+        }
       },
     },
   },
