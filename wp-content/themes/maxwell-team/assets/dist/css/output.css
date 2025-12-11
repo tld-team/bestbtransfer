@@ -1173,6 +1173,10 @@ a:hover {
   max-width: 36rem;
 }
 
+.max-w-5xl {
+  max-width: 64rem;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1643,6 +1647,10 @@ a:hover {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-2 {
@@ -2297,9 +2305,9 @@ a:hover {
   --tw-gradient-to: #15803d var(--tw-gradient-to-position);
 }
 
-.hover\:text-\[\#F06F40\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(240 111 64 / var(--tw-text-opacity, 1));
+.hover\:\!text-\[\#F06F40\]:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(240 111 64 / var(--tw-text-opacity, 1)) !important;
 }
 
 .hover\:text-button:hover {
@@ -2314,11 +2322,6 @@ a:hover {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.hover\:\!text-\[\#F06F40\]:hover {
-  --tw-text-opacity: 1 !important;
-  color: rgb(240 111 64 / var(--tw-text-opacity, 1)) !important;
 }
 
 .hover\:underline:hover {

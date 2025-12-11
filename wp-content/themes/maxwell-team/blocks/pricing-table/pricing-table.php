@@ -3,8 +3,12 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('pricing_table');
+
+$svg_color = $data['svg_color'];
+$background_color = $data['background_color'];
 ?>
 <style>
+    /* Originalni CSS */
     @media (max-width: 768px) {
         .mobile-card {
             display: block;
@@ -18,11 +22,73 @@ $data = get_field('pricing_table');
     .sticky-header {
         background-color: #01123fff !important;
     }
+
+    /* Novi CSS za parabolu */
+    .pricing-table-with-parabola {
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+    }
+
+    .parabola-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .parabola-background svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pricing-content {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+    }
+
+    /* Dodajte belu pozadinu za sadržaj ako je potrebno */
+    .pricing-table-<?php echo esc_attr($blocks_id); ?> {
+        background-color: <?php echo $background_color ?? 'inherit' ?>;
+    }
 </style>
 
 <!-- Pricing Table -->
-<div class="py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
-    <div class="max-w-7xl mx-auto px-4">
+<div class="py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> pricing-table-with-parabola" id="<?php echo esc_attr($anchor); ?>">
+
+    <!-- SVG parabola pozadina -->
+    <div class="parabola-background">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="parabolaGradient<?php echo esc_attr($blocks_id); ?>" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.2" />
+                    <stop offset="50%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.4" />
+                    <stop offset="100%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.2" />
+                </linearGradient>
+
+                <linearGradient id="parabolaSolid<?php echo esc_attr($blocks_id); ?>" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.3" />
+                </linearGradient>
+            </defs>
+
+            <path fill="url(#parabolaSolid<?php echo esc_attr($blocks_id); ?>)"
+                stroke="<?php echo $svg_color ?? 'inherit' ?>" stroke-width="1" stroke-opacity="0.5"
+                d="M0,800 
+             L0,400 
+             C300,600 400,200 600,200 
+             C800,200 900,600 1200,400 
+             L1200,800 
+             Z">
+            </path>
+        </svg>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 pricing-content relative z-10">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
@@ -35,10 +101,10 @@ $data = get_field('pricing_table');
             <?php endif; ?>
         </div>
         <!-- Table -->
-        <div class="overflow-x-auto md:block hidden">
-            <table class="w-full">
+        <div class="overflow-x-auto md:block hidden rounded-2xl overflow-hidden shadow-md  bg-white">
+            <table class="w-full p-3">
                 <thead>
-                    <tr class="text-white" style="background-color: #01123fff;">
+                    <tr class="text-white bg-primary">
                         <th class="py-2 px-6 text-left font-semibold sticky-header"><?php echo esc_html($data['header']['route']); ?></th>
                         <th class="py-2 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['distance']); ?></th>
                         <th class="py-2 px-6 text-center font-semibold sticky-header"><?php echo esc_html($data['header']['price']); ?></th>
@@ -48,9 +114,8 @@ $data = get_field('pricing_table');
                 <?php if ($data['items']) : ?>
                     <tbody class="divide-y divide-gray-200">
                         <?php foreach ($data['items'] as $item) : ?>
-
                             <?php if (!empty($item['title'])) : ?>
-                                <tr class="bg-blue-50">
+                                <tr>
                                     <td colspan="4" class="py-2 px-6 font-bold " style="color: #01123fff;">
                                         <div class="inline-flex items-center">
                                             <?php if (!empty($item['icon'])) : ?>
