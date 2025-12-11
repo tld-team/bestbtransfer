@@ -24,7 +24,7 @@ $overlay_color = $data['overlay_color']?? 'rgba(0, 0, 0, 0.5)';
     }
 </style>
 
-<section class="hero-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section id="<?php echo esc_attr($anchor); ?>" class="hero-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
     <div class="relative py-16 sm:py-20 lg:py-36">    
         <?php if ($bg_image) : ?>
         <!-- Background Image -->
@@ -59,6 +59,5 @@ $overlay_color = $data['overlay_color']?? 'rgba(0, 0, 0, 0.5)';
                 </div>
             </div>
         </div>
-
     </div>
 </section>
