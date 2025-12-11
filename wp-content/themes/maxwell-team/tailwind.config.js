@@ -11,9 +11,9 @@ module.exports = {
     extend: {
       // Boje
       colors: {
-        primary: '#1B294B',
+        primary: 'var(--wp--preset--color--primary, #1a365d)',
         body: '#6B7280',
-        secondary: '#CC9933',
+        secondary: 'var(--wp--preset--color--secondary, #CC9933)',
         button: '#BC8F35'
       },
       fontFamily: {

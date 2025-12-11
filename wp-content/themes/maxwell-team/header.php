@@ -81,7 +81,7 @@
 	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white py-4 sm:py-3 bg-[#F3F4F5] shadow-sm border-b border-border/50">
 		<div class="w-full mx-auto">
 			<nav class="nav-container px-4">
-				<div class="flex items-center justify-between">
+				<div class="flex items-center justify-between text-lg text-primary">
 					<!-- Logo -->
 					<div class="flex items-center">
 						<?php the_custom_logo(); ?>

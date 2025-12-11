@@ -571,7 +571,7 @@ h1,
   font-family: Montserrat, sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  color: #1B294B;
+  color: var(--wp--preset--color--primary, #1a365d);
 }
 
 .container {
@@ -722,12 +722,11 @@ h1.h1-responsive span {
   --tw-gradient-from: #9ca3af var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(156 163 175 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #CC9933 var(--tw-gradient-to-position) !important;
+  --tw-gradient-to: var(--wp--preset--color--secondary, #CC9933) var(--tw-gradient-to-position) !important;
   background-size: 200% auto;
   -webkit-background-clip: text;
           background-clip: text;
-  --tw-text-opacity: 1 !important;
-  color: rgb(204 153 51 / var(--tw-text-opacity, 1)) !important;
+  color: var(--wp--preset--color--secondary, #CC9933) !important;
 }
 
 @keyframes pulse {
@@ -753,8 +752,8 @@ h1.h1-responsive span:hover {
 h2.h2-responsive span {
   animation: gradient 3s ease infinite;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--wp--preset--color--secondary, #CC9933) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
   background-size: 200% auto;
@@ -786,8 +785,8 @@ h2.h2-responsive span:hover {
 h3.h3-responsive span {
   animation: gradient 3s ease infinite;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--wp--preset--color--secondary, #CC9933) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
   background-size: 200% auto;
@@ -819,8 +818,8 @@ h3.h3-responsive span:hover {
 h4.h4-responsive span {
   animation: gradient 3s ease infinite;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #CC9933 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(204 153 51 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--wp--preset--color--secondary, #CC9933) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
   background-size: 200% auto;
@@ -837,6 +836,14 @@ h4.h4-responsive span {
 
 h4.h4-responsive span:hover {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--wp--preset--color--secondary, #CC9933) !important;
 }
 
 .visible {
@@ -1429,12 +1436,7 @@ h4.h4-responsive span:hover {
 }
 
 .bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(27 41 75 / var(--tw-bg-opacity, 1));
-}
-
-.bg-primary\/10 {
-  background-color: rgb(27 41 75 / 0.1);
+  background-color: var(--wp--preset--color--primary, #1a365d);
 }
 
 .bg-purple-100 {
@@ -1453,8 +1455,7 @@ h4.h4-responsive span:hover {
 }
 
 .bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 153 51 / var(--tw-bg-opacity, 1));
+  background-color: var(--wp--preset--color--secondary, #CC9933);
 }
 
 .bg-teal-600 {
@@ -1545,8 +1546,8 @@ h4.h4-responsive span:hover {
 }
 
 .from-primary {
-  --tw-gradient-from: #1B294B var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(27 41 75 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--wp--preset--color--primary, #1a365d) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -1869,8 +1870,7 @@ h4.h4-responsive span:hover {
 }
 
 .text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(27 41 75 / var(--tw-text-opacity, 1));
+  color: var(--wp--preset--color--primary, #1a365d);
 }
 
 .text-purple-600 {
@@ -1884,8 +1884,7 @@ h4.h4-responsive span:hover {
 }
 
 .text-secondary {
-  --tw-text-opacity: 1;
-  color: rgb(204 153 51 / var(--tw-text-opacity, 1));
+  color: var(--wp--preset--color--secondary, #CC9933);
 }
 
 .text-teal-600 {
@@ -2182,8 +2181,7 @@ h4.h4-responsive span:hover {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(204 153 51 / var(--tw-text-opacity, 1));
+  color: var(--wp--preset--color--secondary, #CC9933);
   box-shadow:
     inset 0 0 30px rgb(250, 245, 235);
 }
@@ -2265,10 +2263,6 @@ h4.h4-responsive span:hover {
   background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-secondary\/90:hover {
-  background-color: rgb(204 153 51 / 0.9);
-}
-
 .hover\:bg-teal-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 250 / var(--tw-bg-opacity, 1));
@@ -2314,13 +2308,17 @@ h4.h4-responsive span:hover {
 }
 
 .hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(204 153 51 / var(--tw-text-opacity, 1));
+  color: var(--wp--preset--color--secondary, #CC9933);
 }
 
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.hover\:\!text-\[\#F06F40\]:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(240 111 64 / var(--tw-text-opacity, 1)) !important;
 }
 
 .hover\:underline:hover {
@@ -2362,8 +2360,7 @@ h4.h4-responsive span:hover {
 }
 
 .focus\:ring-primary:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(27 41 75 / var(--tw-ring-opacity, 1));
+  --tw-ring-color: var(--wp--preset--color--primary, #1a365d);
 }
 
 .active\:scale-95:active {

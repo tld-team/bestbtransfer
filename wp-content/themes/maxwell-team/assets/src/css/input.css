@@ -123,6 +123,13 @@
     @apply bg-gradient-to-r from-secondary to-amber-400 bg-clip-text text-transparent 
               animate-gradient bg-[length:200%_auto] hover:animate-pulse;
   }
+
+  a {
+    text-decoration: none !important;
+  }
+  a:hover {
+    @apply text-secondary !important;
+  }
 }
 
 /* navigacija */

@@ -175,7 +175,6 @@ function mma_future_scripts()
 	/**  */
 	wp_enqueue_style('main', get_template_directory_uri() . '/assets/dist/css/output.css');
 	wp_enqueue_script('main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
-	// wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/dist/fontawesome/css/all.min.css?v=6.5.2' );
 
 
 	/** ================================================================================================================ */
@@ -195,9 +194,8 @@ function mma_future_scripts()
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-blocks-style'); // Ako koristite WooCommerce
-	wp_dequeue_style('global-styles');
 }
-add_action('wp_enqueue_scripts', 'mma_future_scripts');
+add_action('wp_enqueue_scripts', 'mma_future_scripts', 20);
 
 
 /**
@@ -209,7 +207,6 @@ function mma_future_admin_scripts($hook)
 	if ('post.php' === $hook) {
 		wp_enqueue_style('mma-main', get_template_directory_uri() . '/assets/dist/css/output.css');
 		wp_enqueue_script('mma-main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
-		// wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/dist/fontawesome/css/all.min.css' );
 	}
 }
 add_action('admin_enqueue_scripts', 'mma_future_admin_scripts');
