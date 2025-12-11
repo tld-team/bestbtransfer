@@ -41,7 +41,7 @@ $overlay_color = $data['overlay_color']?? 'rgba(0, 0, 0, 0.5)';
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-2xl">
                 <?php if ($data['top_title']) : ?>
-                    <span class="maxwell-top-title mb-2"><?php echo $data['top_title']; ?></span>
+                    <span class="hero-top-title mb-2"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
                 <?php if ($data['title']) : ?>
                     <h1 class="h1-responsive mb-4"><?php echo $data['title']; ?></h1>
