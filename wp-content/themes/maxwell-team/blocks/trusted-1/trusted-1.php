@@ -31,12 +31,12 @@ $data = get_field('trusted_1');
                 <?php foreach ($data['items'] as $item) : ?>
                     <div class="text-center bg-white px-6 py-8 rounded-xl hover:shadow-md">
                         <?php if (!empty($item['icon'])) : ?>
-                            <div class="rounded-2xl flex items-center justify-center mx-auto w-16 h-16">
+                            <div class="rounded-2xl flex items-center justify-center mx-auto w-20 h-20 mb-2">
                                 <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) {
-                                    echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 text-button bg-button/5 rounded-md p-2');
+                                    echo maxwell_render_svg($item['icon']['url'], 'text-button bg-button/5 rounded-md p-4');
                                 } else {
                                 ?>
-                                    <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-16 h-16">
+                                    <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-20 h-20">
                                 <?php
 
                                 } ?>
@@ -46,7 +46,7 @@ $data = get_field('trusted_1');
                             <h3 class="h3-responsive mt-2 mb-2"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['description'])) : ?>
-                            <div class="mt-2 content-list-link"><?php echo apply_filters('the_content', $item['description']); ?></div>
+                            <div class="content-list-link"><?php echo apply_filters('the_content', $item['description']); ?></div>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
