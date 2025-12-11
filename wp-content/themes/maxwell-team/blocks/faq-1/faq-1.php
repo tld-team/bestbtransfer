@@ -5,8 +5,12 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('faq_1');
 ?>
-
-<section class="py-8 sm:py-12 lg:py-18 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<style>
+    .faq-1-<?php echo esc_attr($blocks_id); ?> {
+        background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
+    }
+</style>
+<section class="py-8 sm:py-12 lg:py-18 faq-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
 
         <div class="max-w-2xl mx-auto text-center">

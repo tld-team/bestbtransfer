@@ -6,8 +6,13 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('trusted_1');
 ?>
 
+<style>
+    .trusted-1-<?php echo esc_attr($blocks_id); ?> {
+        background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
+    }
+</style>
 <!-- 4. Trust Signals sekcija -->
-<section class="py-8 sm:py-12 lg:py-18 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-8 sm:py-12 lg:py-18 trusted-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) : ?>

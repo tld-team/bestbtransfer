@@ -5,8 +5,13 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('popular_3');
 ?>
+<style>
+    .popular-2-<?php echo esc_attr($blocks_id); ?> {
+        background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
+    }
+</style>
 <!-- Popular Tours Section -->
-<section class="py-8 sm:py-12 lg:py-18 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-8 sm:py-12 lg:py-18 popular-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>

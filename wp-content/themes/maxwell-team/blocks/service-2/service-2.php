@@ -5,7 +5,12 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('service_2');
 $right = $data['right'];
 ?>
-<section class="service-2 py-8 sm:py-12 lg:py-18 <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<style>
+    .service-2-<?php echo esc_attr($blocks_id); ?> {
+        background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
+    }
+</style>
+<section class="service-2 py-8 sm:py-12 lg:py-18 service-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if (!empty($data['top_title'])) { ?>

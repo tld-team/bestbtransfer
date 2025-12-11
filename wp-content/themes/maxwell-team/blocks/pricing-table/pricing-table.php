@@ -3,12 +3,8 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('pricing_table');
-
-$svg_color = $data['svg_color'];
-$background_color = $data['background_color'];
 ?>
 <style>
-    /* Originalni CSS */
     @media (max-width: 768px) {
         .mobile-card {
             display: block;
@@ -19,76 +15,14 @@ $background_color = $data['background_color'];
         }
     }
 
-    .sticky-header {
-        background-color: #01123fff !important;
-    }
-
-    /* Novi CSS za parabolu */
-    .pricing-table-with-parabola {
-        position: relative;
-        overflow: hidden;
-        background: transparent;
-    }
-
-    .parabola-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    .parabola-background svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    .pricing-content {
-        position: relative;
-        z-index: 1;
-        background: transparent;
-    }
-
-    /* Dodajte belu pozadinu za sadržaj ako je potrebno */
     .pricing-table-<?php echo esc_attr($blocks_id); ?> {
-        background-color: <?php echo $background_color ?? 'inherit' ?>;
+        background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
     }
 </style>
 
 <!-- Pricing Table -->
-<div class="py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> pricing-table-with-parabola" id="<?php echo esc_attr($anchor); ?>">
-
-    <!-- SVG parabola pozadina -->
-    <div class="parabola-background">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-            <defs>
-                <linearGradient id="parabolaGradient<?php echo esc_attr($blocks_id); ?>" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.2" />
-                    <stop offset="50%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.4" />
-                    <stop offset="100%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.2" />
-                </linearGradient>
-
-                <linearGradient id="parabolaSolid<?php echo esc_attr($blocks_id); ?>" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.3" />
-                    <stop offset="100%" style="stop-color:<?php echo $svg_color ?? 'inherit' ?>; stop-opacity:0.3" />
-                </linearGradient>
-            </defs>
-
-            <path fill="url(#parabolaSolid<?php echo esc_attr($blocks_id); ?>)"
-                stroke="<?php echo $svg_color ?? 'inherit' ?>" stroke-width="1" stroke-opacity="0.5"
-                d="M0,800 
-             L0,400 
-             C300,600 400,200 600,200 
-             C800,200 900,600 1200,400 
-             L1200,800 
-             Z">
-            </path>
-        </svg>
-    </div>
-
-    <div class="max-w-5xl mx-auto px-4 pricing-content relative z-10">
+<div class="py-8 sm:py-12 lg:py-18 pricing-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+    <div class="max-w-5xl mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
@@ -101,8 +35,8 @@ $background_color = $data['background_color'];
             <?php endif; ?>
         </div>
         <!-- Table -->
-        <div class="overflow-x-auto md:block hidden rounded-2xl overflow-hidden shadow-md  bg-white">
-            <table class="w-full p-3">
+        <div class="overflow-x-auto md:block hidden rounded-2xl overflow-hidden shadow-md">
+            <table class="w-full bg-white">
                 <thead>
                     <tr class="text-white bg-primary">
                         <th class="py-2 px-6 text-left font-semibold sticky-header"><?php echo esc_html($data['header']['route']); ?></th>
@@ -114,10 +48,11 @@ $background_color = $data['background_color'];
                 <?php if ($data['items']) : ?>
                     <tbody class="divide-y divide-gray-200">
                         <?php foreach ($data['items'] as $item) : ?>
+
                             <?php if (!empty($item['title'])) : ?>
                                 <tr>
-                                    <td colspan="4" class="py-2 px-6 font-bold " style="color: #01123fff;">
-                                        <div class="inline-flex items-center">
+                                    <td colspan="4" class="py-2 px-6 font-bold">
+                                        <div class="inline-flex items-center text-primary">
                                             <?php if (!empty($item['icon'])) : ?>
                                                 <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
                                                     <?php echo maxwell_render_svg($item['icon']['url'], 'mr-2 w-4 h-4'); ?>
@@ -132,7 +67,7 @@ $background_color = $data['background_color'];
                             <?php if (!empty($item['data'])) : ?>
                                 <?php foreach ($item['data'] as $route) : ?>
                                     <tr class="hover:bg-gray-50 transition-colors">
-                                        <td class="px-6">
+                                        <td class="px-6 text-primary">
                                             <div><?php echo esc_html($route['route']); ?></div>
                                         </td>
                                         <td class="px-6 text-center">
@@ -145,7 +80,7 @@ $background_color = $data['background_color'];
                                         </td>
                                         <?php if (!empty($route['price'])): ?>
                                             <td class="px-6 text-center">
-                                                <div class="font-bold" style="color: #01123fff;"><?php echo esc_html($route['price']); ?></div>
+                                                <div class="font-bold text-primary"><?php echo esc_html($route['price']); ?></div>
                                             </td>
                                         <?php endif; ?>
                                         <td class="px-6 text-center">
@@ -163,9 +98,9 @@ $background_color = $data['background_color'];
         <?php if (!empty($data['items'])) : ?>
             <div class="visible md:hidden p-6 space-y-6">
                 <?php foreach ($data['items'] as $item) : ?>
-                    <div class="bg-blue-50 rounded-xl p-4">
+                    <div class="rounded-xl p-4">
                         <?php if (!empty($item['title'])) : ?>
-                            <h3 class="font-bold text-lg mb-4" style="color: #01123fff;">
+                            <h3 class="font-bold text-lg mb-4 text-primary">
                                 <?php if (!empty($item['icon'])) : ?>
                                     <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
                                         <?php maxwell_render_svg($item['icon']['url']); ?>
@@ -181,7 +116,7 @@ $background_color = $data['background_color'];
                                     <h4 class="font-semibold"><?php echo esc_html($route['route']); ?></h4>
                                     <p class="text-sm text-gray-500 mb-2">~<?php echo esc_html($route['distance']); ?> | ~<?php echo esc_html($route['time']); ?></p>
                                     <div class="flex justify-between items-center mb-3">
-                                        <span class="font-bold text-lg" style="color: #01123fff;"><?php echo esc_html($route['price']); ?></span>
+                                        <span class="font-bold text-lg text-primary"><?php echo esc_html($route['price']); ?></span>
                                     </div>
                                     <?php add_inline_contact(); ?>
                                 </div>
