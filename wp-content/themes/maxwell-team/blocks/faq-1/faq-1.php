@@ -21,7 +21,7 @@ $data = get_field('faq_1');
                 <h2 class="h2-responsive"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
             <?php if (!empty($data['description'])) : ?>
-                <p class="max-w-xl mx-auto mt-4"><?php echo $data['description']; ?></p>
+                <div class="mx-auto mt-4"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
         </div>
 
@@ -30,8 +30,8 @@ $data = get_field('faq_1');
                 <?php foreach ($data['items'] as $key=>$item) : ?>
                     <div class="accordion-item transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
                         <button type="button" class="accordion-button flex items-center justify-between w-full px-4 py-5 sm:p-6">
-                            <span class="flex text-lg font-semibold text-black"><?php echo $item['question']; ?></span>
-                            <svg class="w-6 h-6 text-gray-400 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <span class="flex text-lg font-semibold"><?php echo $item['question']; ?></span>
+                            <svg class="w-6 h-6 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
@@ -44,7 +44,7 @@ $data = get_field('faq_1');
         </div>
 
         <?php if (!empty($data['bottom_text'])) : ?>
-            <div class="text-center mt-9  content-list-link">
+            <div class="text-center mt-9 content-list-link">
                 <?php echo apply_filters('the_content', $data['bottom_text']); ?>
             </div>
         <?php endif; ?>
