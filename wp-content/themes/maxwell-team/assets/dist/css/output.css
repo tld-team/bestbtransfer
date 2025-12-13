@@ -1105,10 +1105,6 @@ a:hover {
   max-width: max-content;
 }
 
-.max-w-xl {
-  max-width: 36rem;
-}
-
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1249,10 +1245,6 @@ a:hover {
 
 .whitespace-nowrap {
   white-space: nowrap;
-}
-
-.rounded {
-  border-radius: 0.25rem;
 }
 
 .rounded-2xl {
@@ -1757,11 +1749,6 @@ a:hover {
   color: rgb(251 191 36 / var(--tw-text-opacity, 1));
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
@@ -1775,11 +1762,6 @@ a:hover {
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-500 {
