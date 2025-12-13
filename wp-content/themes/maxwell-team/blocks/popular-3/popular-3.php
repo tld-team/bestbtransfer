@@ -62,14 +62,22 @@ $data = get_field('popular_3');
 
                                 <?php endif; ?>
                                 <?php if (!empty($item['price'])): ?>
-                                    <span class="font-semibold"><?php echo $item['price']; ?></span>
+                                    <span class="text-primary font-semibold"><?php echo $item['price']; ?></span>
                                 <?php endif; ?>
                             </div>
                             <?php if (!empty($item['description'])): ?>
                                 <div class="mb-4 content-list-link"><?php echo apply_filters('the_content', $item['description']); ?></div>
                             <?php endif; ?>
                             <?php if (!empty($item['link'])): ?>
-                                <?php link_inline_arrow($item['link'], 'font-bold'); ?>
+
+                                <a href="<?php echo esc_url($item['link']['url']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-2 border-primary bg-transparent hover:!text-white hover:bg-primary h-9 rounded-md px-4">
+                                    <?php echo esc_html($item['link']['title']); ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                        class="w-3 h-3">
+                                        <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                    </svg>
+                                </a>
+
                             <?php endif; ?>
                         </div>
                     </div>

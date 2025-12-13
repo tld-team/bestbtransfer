@@ -28,12 +28,12 @@ $data = get_field('features_1');
         <?php if ($data['items']) : ?>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
                 <?php foreach ($data['items'] as $item) : ?>
-                    <div class="bg-white rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform text-primary">
+                    <div class="bg-white rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform">
                         <div class="p-6">
                             <!-- <div class="flex items-end justify-between mb-4"> -->
                             <?php if ($item['duration']) : ?>
                                 <div class="flex items-center gap-1 text-secondary font-bold mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 text-primary">
                                         <path fill="currentColor" d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path>
                                     </svg>
                                     <span><?php echo $item['duration']; ?></span>
@@ -42,7 +42,7 @@ $data = get_field('features_1');
                             <!-- </div> -->
 
                             <?php if (!empty($item['title'])): ?>
-                                <h3 class="text-primary text-xl font-bold mb-2"><?php echo $item['title']; ?></h3>
+                                <h3 class="text-primary text-xl font-semibold mb-2"><?php echo $item['title']; ?></h3>
                             <?php endif; ?>
                             <?php if (!empty($item['title'])): ?>
                                 <p><?php echo $item['description']; ?></p>
