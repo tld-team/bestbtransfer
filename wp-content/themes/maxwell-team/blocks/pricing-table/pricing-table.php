@@ -18,6 +18,9 @@ $data = get_field('pricing_table');
     .pricing-table-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
     }
+    .mobile-box-<?php echo $blocks_id; ?> {
+        background-color: <?php echo '#ffffff' .dechex(80) ?? "#ffffffff" ?>;
+    }
 </style>
 
 <!-- Pricing Table -->
@@ -96,9 +99,9 @@ $data = get_field('pricing_table');
         </div>
 
         <?php if (!empty($data['items'])) : ?>
-            <div class="visible md:hidden p-6 space-y-6">
+            <div class="visible md:hidden space-y-6">
                 <?php foreach ($data['items'] as $item) : ?>
-                    <div class="rounded-xl p-4">
+                    <div class="rounded-xl p-6 mobile-box-<?php echo $blocks_id; ?>">
                         <?php if (!empty($item['title'])) : ?>
                             <h3 class="font-bold text-lg mb-4 text-primary">
                                 <?php if (!empty($item['icon'])) : ?>

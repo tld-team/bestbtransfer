@@ -992,6 +992,10 @@ a:hover {
   height: 1.75rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-9 {
   height: 2.25rem;
 }
@@ -1006,10 +1010,6 @@ a:hover {
 
 .h-full {
   height: 100%;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .min-h-screen {
@@ -1068,12 +1068,12 @@ a:hover {
   width: 1.75rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-8 {
   width: 2rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .max-w-2xl {
@@ -1100,13 +1100,13 @@ a:hover {
   max-width: 80rem;
 }
 
-.max-w-xl {
-  max-width: 36rem;
-}
-
 .max-w-max {
   max-width: -moz-max-content;
   max-width: max-content;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-shrink-0 {
@@ -1653,6 +1653,11 @@ a:hover {
   padding-bottom: 1.25rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1661,11 +1666,6 @@ a:hover {
 .py-\[100px\] {
   padding-top: 100px;
   padding-bottom: 100px;
-}
-
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .pb-5 {
@@ -2489,12 +2489,12 @@ a:hover {
     width: 60%;
   }
 
-  .md\:w-auto {
-    width: auto;
-  }
-
   .md\:w-6 {
     width: 1.5rem;
+  }
+
+  .md\:w-auto {
+    width: auto;
   }
 
   .md\:grid-cols-2 {
@@ -2519,13 +2519,14 @@ a:hover {
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  .md\:p-6 {
-    padding: 1.5rem;
-  }
-
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .md\:text-4xl {
@@ -2536,11 +2537,6 @@ a:hover {
   .md\:text-base {
     font-size: 16px;
     line-height: 20px;
-  }
-
-  .md\:text-3xl {
-    font-size: 30px;
-    line-height: 32px;
   }
 }
 
