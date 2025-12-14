@@ -178,15 +178,15 @@ function mma_future_scripts()
 	/**  */
 	wp_enqueue_style('main', get_template_directory_uri() . '/assets/dist/css/output.css');
 	
-	try {
-		if (in_array('acf/popular-3', $acf_data)) {
+	// try {
+	// 	if (in_array('acf/popular-3', $acf_data)) {
 			wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
 			wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
 			wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array(), _S_VERSION, true);
-		}
-	} catch (Exception $e) {
-		tld_log($e->getMessage());
-	}
+	// 	}
+	// } catch (Exception $e) {
+	// 	tld_log($e->getMessage());
+	// }
 
 	wp_enqueue_script('main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
 
@@ -222,15 +222,15 @@ function mma_future_admin_scripts($hook)
 		wp_enqueue_style('mma-main', get_template_directory_uri() . '/assets/dist/css/output.css');
 		wp_enqueue_script('mma-main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
 
-		try {
-			if (in_array('acf/popular-3', $acf_data)) {
+		// try {
+		// 	if (in_array('acf/popular-3', $acf_data)) {
 				wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
 				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
 				wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array(), _S_VERSION, true);
 			}
-		} catch (Exception $e) {
-			tld_log($e->getMessage());
-		}
+		// } catch (Exception $e) {
+		// 	tld_log($e->getMessage());
+		// }
 	}
 }
 add_action('admin_enqueue_scripts', 'mma_future_admin_scripts');
