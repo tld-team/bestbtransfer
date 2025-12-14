@@ -246,8 +246,7 @@ if (function_exists('acf_register_block_type')) {
 	 * ==============================
 	 */
 	acf_register_block_type(array(
-		'name' => 'popular-3',
-		'title' => 'Popular 3',
+		'name' => 'popular-3', 'title' => 'Popular 3',
 		'description' => 'Popular 3',
 		'category' => 'maxwell-blocks',
 		'mode' => 'preview',

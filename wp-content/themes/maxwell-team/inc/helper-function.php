@@ -79,3 +79,87 @@ function maxwell_render_svg($svg_url, $classes = '', $aria_label = '') {
     
     return $svg_content;
 }
+
+
+/**
+ * Function to create a custom post meta field for storing ACF blocks list.
+ *
+ * This function is triggered when a post is saved. It checks if the post has ACF blocks and if so,
+ * it creates a custom post meta field '_acf_blocks_list' with an array of ACF blocks used in the post.
+ * If the post does not have any ACF blocks, the custom post meta field is deleted.
+ *
+ * @param int $post_id The ID of the post being saved.
+ * @param WP_Post $post The post object being saved.
+ * @return void
+ */
+function maxwell_create_acf_blocks_list( $post_id, $post ) {
+	// Check if the post is a revision or if it has ACF blocks
+	if ( wp_is_post_revision( $post_id ) || ! has_blocks( $post->post_content ) ) {
+		return;
+	}
+
+	// Parse the post content and get the ACF blocks
+	$blocks     = parse_blocks( $post->post_content );
+	$acf_blocks = [];
+	foreach ( $blocks as $key => $block ) {
+		if ( isset( $block['blockName'] ) ) {
+			$acf_blocks[ $key ] = $block['blockName'];
+		}
+	}
+
+	// Update or delete the custom post meta field
+	if ( ! empty( $acf_blocks ) ) {
+		update_post_meta( $post_id, '_acf_blocks_list', $acf_blocks );
+	} else {
+		delete_post_meta( $post_id, '_acf_blocks_list' );
+	}
+}
+add_action( 'save_post', 'maxwell_create_acf_blocks_list', 10, 2 );
+
+
+/**
+ * Deletes the '_acf_blocks_list' custom post meta field when a post is deleted.
+ *
+ * @param int $post_id The ID of the post being deleted.
+ * @return void
+ */
+function maxwell_delete_post_meta_acf_blocks_list( $post_id ) {
+	$custom_meta = get_post_meta( $post_id, '_acf_blocks_list', true );
+
+	if ( ! empty( $custom_meta ) ) {
+		delete_post_meta( $post_id, '_acf_blocks_list' );
+	}
+}
+add_action( 'delete_post', 'maxwell_delete_post_meta_acf_blocks_list', 10, 1 );
+
+
+/**
+ * Prints a heading HTML element based on the given order and block name.
+ *
+ * @param array $order The order of the block names.
+ * @param string $block_name The name of the block.
+ * @param string $title The title of the heading.
+ * @param string $class The CSS class of the heading.
+ * @param array $args Additional arguments for the heading.
+ * @return void
+ */
+function print_heading( $order, $block_name, $title = '', $class = '', $args = [] ): void {
+	if ( isset( $order[0] ) ) {
+		if ( $order[0] === $block_name ) {
+			?>
+            <!-- Prints an H1 heading if the block name is the first in the order -->
+            <h1 class="<?php echo $class ?>"><?php echo $title; ?></h1>
+			<?php
+		} else {
+			?>
+            <!-- Prints an H2 heading if the block name is not the first in the order -->
+            <h2 class="<?php echo $class ?>"><?php echo $title; ?></h2>
+			<?php
+		}
+	} else {
+		?>
+        <!-- Prints an H2 heading if the order is empty -->
+        <h2 class="<?php echo $class ?>"><?php echo $title; ?></h2>
+		<?php
+	}
+}

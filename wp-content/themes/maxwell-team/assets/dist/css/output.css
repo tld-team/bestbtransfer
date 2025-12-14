@@ -904,6 +904,10 @@ a:hover {
   margin-top: 2.25rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1098,6 +1102,10 @@ a:hover {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-\[200px\] {
+  max-width: 200px;
 }
 
 .max-w-max {
@@ -1737,6 +1745,10 @@ a:hover {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.\!text-primary {
+  color: var(--wp--preset--color--primary, #1a365d) !important;
 }
 
 .text-\[\#FF700A\] {
