@@ -172,7 +172,7 @@ add_action('widgets_init', 'mma_future_widgets_init');
 function mma_future_scripts()
 {
 	global $post;
-	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true);
+	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true)?? [''];
 	
 	/** ==============================            custom styles and scripts            ============================== */
 	/**  */
@@ -217,7 +217,7 @@ add_action('wp_enqueue_scripts', 'mma_future_scripts', 20);
 function mma_future_admin_scripts($hook)
 {	
 	global $post;
-	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true) ?? [];
+	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true) ?? [''];
 	if ('post.php' === $hook) {
 		wp_enqueue_style('mma-main', get_template_directory_uri() . '/assets/dist/css/output.css');
 		wp_enqueue_script('mma-main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
