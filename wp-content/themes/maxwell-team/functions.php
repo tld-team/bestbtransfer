@@ -183,6 +183,7 @@ function mma_future_scripts()
 		wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
 		wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array(), _S_VERSION, true);
 	}
+
 	wp_enqueue_script('main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
 
 	/** ================================================================================================================ */
@@ -210,11 +211,18 @@ add_action('wp_enqueue_scripts', 'mma_future_scripts', 20);
  * Enqueue admin scripts
  */
 function mma_future_admin_scripts($hook)
-{
-	global $screen_options;
+{	
+	global $post;
+	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true) ?? [];
 	if ('post.php' === $hook) {
 		wp_enqueue_style('mma-main', get_template_directory_uri() . '/assets/dist/css/output.css');
 		wp_enqueue_script('mma-main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
+
+		if (in_array('acf/popular-3', $acf_data)) {
+			wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
+			wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
+			wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array(), _S_VERSION, true);
+		}
 	}
 }
 add_action('admin_enqueue_scripts', 'mma_future_admin_scripts');
