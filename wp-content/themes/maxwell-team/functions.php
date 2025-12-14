@@ -172,7 +172,7 @@ add_action('widgets_init', 'mma_future_widgets_init');
 function mma_future_scripts()
 {
 	global $post;
-	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true);
+	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true) ?? [];
 	
 	/** ==============================            custom styles and scripts            ============================== */
 	/**  */
