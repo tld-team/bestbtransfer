@@ -12,7 +12,7 @@ module.exports = {
       // Boje
       colors: {
         primary: 'var(--wp--preset--color--primary, #1a365d)',
-        body: '#6B7280',
+        body: '#3F454F',
         secondary: 'var(--wp--preset--color--secondary, #CC9933)',
         button: '#BC8F35'
       },

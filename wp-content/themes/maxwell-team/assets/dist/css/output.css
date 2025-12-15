@@ -558,7 +558,7 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  color: #6B7280;
+  color: #3F454F;
   background-color: #F2F0EE !important;
 }
 
@@ -880,10 +880,6 @@ a:hover {
   margin-top: 0.125rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
@@ -902,10 +898,6 @@ a:hover {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .block {
@@ -1152,6 +1144,10 @@ a:hover {
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1666,6 +1662,10 @@ a:hover {
 .py-\[100px\] {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pb-5 {
@@ -2436,6 +2436,11 @@ a:hover {
     padding-bottom: 0.75rem;
   }
 
+  .sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .sm\:py-\[140px\] {
     padding-top: 140px;
     padding-bottom: 140px;
@@ -2497,6 +2502,10 @@ a:hover {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -2568,6 +2577,11 @@ a:hover {
   .lg\:py-36 {
     padding-top: 9rem;
     padding-bottom: 9rem;
+  }
+
+  .lg\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .lg\:pb-18 {
