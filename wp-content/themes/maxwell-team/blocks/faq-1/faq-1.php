@@ -36,7 +36,7 @@ $data = get_field('faq_1');
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                         </button>
-                        <div class="<?php echo $key === 0 ? '' : 'hidden'; ?> accordion-content px-4 pb-5 sm:px-6 sm:pb-6  content-list-link">
+                        <div class="<?php echo $key === 0 ? '' : 'hidden'; ?> accordion-content px-4 pb-5 sm:px-6 sm:pb-6 content-list-link">
                             <?php echo apply_filters('the_content', $item['answer']); ?>
                         </div>
                     </div>
