@@ -127,6 +127,26 @@
   a:hover {
     @apply text-secondary !important;
   }
+
+  .content-list-link p {
+    @apply mb-3;
+  }
+  .content-list-link ul {
+    @apply list-disc list-inside text-primary;
+  }
+
+  .content-list-link ul li::marker {
+    @apply text-secondary;
+  }
+  
+  .content-list-link ul li {
+    @apply mb-2;
+  }
+  
+  .content-list-link ul li a {
+    @apply text-primary hover:text-secondary transition-colors duration-200;
+  }
+  
 }
 
 /* navigacija */
@@ -192,7 +212,7 @@
 }
 
 /* Stil za listu sa disc markerima */
-.content-list-link ul {
+/* .content-list-link ul {
   list-style: none !important;
   padding-left: 0 !important;
 }
@@ -214,7 +234,7 @@
   height: 0.375rem;
   border-radius: 9999px;
   background-color: theme('colors.button');
-}
+} */
 
 @keyframes floating {
 

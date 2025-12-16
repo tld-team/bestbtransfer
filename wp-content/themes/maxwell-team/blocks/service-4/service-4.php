@@ -6,11 +6,11 @@ $data = get_field('service_4');
 $revers = $data['reverse'] == 'yes' ? true : false;
 ?>
 <style>
-    .service-2-<?php echo esc_attr($blocks_id); ?> {
+    .service-4-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
     }
 </style>
-<section id="<?php echo esc_attr($anchor); ?>" class="service-2 py-8 sm:py-12 lg:py-18 service-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
+<section id="<?php echo esc_attr($anchor); ?>" class="service-4 py-8 sm:py-12 lg:py-18 service-4-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['main_top_title'])) : ?>
@@ -53,7 +53,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
                         <h3 class="text-2xl md:text-3xl font-bold mb-4"><?php echo $data['title']; ?></h3>
                     <?php endif; ?>
                     <?php if (!empty($data['description'])) : ?>
-                        <div class="text-lg mb-6"><?php echo $data['description']; ?></div>
+                        <div class="mb-6"><?php echo $data['description']; ?></div>
                     <?php endif; ?>
                     <?php if (!empty($data['includes'])) : ?>
                         <div class="mb-6">
@@ -66,7 +66,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-secondary">
                                             <path d="M20 6 9 17l-5-5"></path>
                                         </svg>
-                                        <?php echo $include['include']; ?>
+                                        <span class="text-primary"><?php echo $include['include']; ?></span>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -85,7 +85,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
                         <?php endif; ?>
                     </div>
                     <?php if (!empty($data['link'])) : ?>
-                        <?php link_1($data['link'], 'max-w-fit !text-primary') ?>
+                        <?php link_1($data['link'], 'max-w-fit !text-white') ?>
                     <?php endif; ?>
                 </div>
             </div>

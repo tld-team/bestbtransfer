@@ -11,9 +11,12 @@ module.exports = {
     extend: {
       // Boje
       colors: {
-        primary: 'var(--wp--preset--color--primary, #1a365d)',
+        primary: '#0F1729',
         body: '#3F454F',
-        secondary: 'var(--wp--preset--color--secondary, #CC9933)',
+        secondary: {
+          DEFAULT: '#CC9933',
+          'secondary-light': '#F9F4E9', 
+        },
         button: '#BC8F35'
       },
       fontFamily: {
@@ -94,7 +97,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-mma': 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)',
-        'gradient-mma-light': 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        'gradient-light': 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
         'gradient-stats': 'linear-gradient(90deg, rgba(26, 32, 44, 0.9) 0%, rgba(45, 55, 72, 0.7) 100%)',
         'gradient-stats-light': 'linear-gradient(90deg, rgba(248, 250, 252, 0.9) 0%, rgba(226, 232, 240, 0.7) 100%)',
         'section-divider': 'linear-gradient(90deg, transparent 0%, #e53e3e 50%, transparent 100%)',
