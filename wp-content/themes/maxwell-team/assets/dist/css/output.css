@@ -1398,6 +1398,11 @@ a:hover {
   background-color: rgb(243 244 245 / var(--tw-bg-opacity, 1));
 }
 
+.bg-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 41 75 / var(--tw-bg-opacity, 1));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -1826,6 +1831,11 @@ a:hover {
   color: rgb(15 23 41 / var(--tw-text-opacity, 1)) !important;
 }
 
+.\!text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
 .text-\[\#FF700A\] {
   --tw-text-opacity: 1;
   color: rgb(255 112 10 / var(--tw-text-opacity, 1));
@@ -1929,11 +1939,6 @@ a:hover {
   color: rgb(202 138 4 / var(--tw-text-opacity, 1));
 }
 
-.\!text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
-}
-
 .opacity-80 {
   opacity: 0.8;
 }
@@ -1964,6 +1969,10 @@ a:hover {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.ring-offset-background {
+  --tw-ring-offset-color: #1A294B;
 }
 
 .backdrop-blur-md {

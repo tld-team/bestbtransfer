@@ -1,4 +1,4 @@
-<footer class="bg-primary text-slate-50">
+<footer class="bg-background text-secondary-light">
     <div class="container py-16 mx-auto">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
             <div>

@@ -16,7 +16,7 @@
 
 	<?php $top_bar = get_field('top_bar', 'option'); ?>
 
-	<div class="bg-primary text-white md:block hidden">
+	<div class="bg-background text-white md:block hidden">
 		<div class="flex flex-col md:flex-row justify-between items-center p-2 max-w-7xl mx-auto">
 			<?php if (!empty($top_bar)) : ?>
 				<div class="flex flex-col md:flex-row md:items-center md:space-x-8 mb-4 md:mb-0 w-full md:w-auto ">

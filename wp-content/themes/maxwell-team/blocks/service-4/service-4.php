@@ -14,13 +14,13 @@ $revers = $data['reverse'] == 'yes' ? true : false;
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['main_top_title'])) : ?>
-                <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
+                <span class="maxwell-top-title"><?php echo $data['main_top_title']; ?></span>
             <?php endif; ?>
             <?php if (!empty($data['main_title'])) : ?>
-                <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['title']; ?></h2>
+                <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['main_title']; ?></h2>
             <?php endif; ?>
             <?php if (!empty($data['main_description'])) : ?>
-                <div class="max-w-2xl mx-auto content-list-link"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="max-w-2xl mx-auto content-list-link"><?php echo apply_filters('the_content', $data['main_description']); ?></div>
             <?php endif; ?>
         </div>
 
