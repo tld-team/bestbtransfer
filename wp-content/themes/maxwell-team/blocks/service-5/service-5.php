@@ -33,7 +33,7 @@ $data = get_field('service_5');
                         <?php if (!empty($item['icon'])) : ?>
                             <div class="rounded-2xl w-20 h-20 mb-3 bg-secondary-light">
                                 <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) {
-                                    echo maxwell_render_svg($item['icon']['url'], 'w-12 h-12 text-secondary rounded-md p-4');
+                                    echo maxwell_render_svg($item['icon']['url'], '!w-12 !h-12 text-secondary rounded-md p-4');
                                 } else {
                                 ?>
                                     <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-20 h-20">
