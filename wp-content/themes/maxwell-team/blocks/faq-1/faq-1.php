@@ -28,7 +28,7 @@ $data = get_field('faq_1');
         <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16 accordion-container-<?php $id; ?>">
             <?php if (!empty($data['items'])) : ?>
                 <?php foreach ($data['items'] as $key => $item) : ?>
-                    <div class="accordion-item transition-all duration-200 bg-white border-b border-gray-200 shadow-sm cursor-pointer hover:bg-gray-50">
+                    <div class="accordion-item transition-all duration-200 bg-white border-b border-gray-200 shadow-sm rounded-xl cursor-pointer hover:bg-gray-50">
                         <button type="button" class="accordion-button flex items-center justify-between w-full px-4 py-5 sm:p-6">
                             <div class="flex justify-between items-center w-full">
                                 <span class="text-left text-lg font-semibold text-primary"><?php echo $item['question']; ?></span>

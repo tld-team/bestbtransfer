@@ -1459,10 +1459,6 @@ a:hover {
   background-color: rgb(15 23 41 / var(--tw-bg-opacity, 1));
 }
 
-.bg-primary\/20 {
-  background-color: rgb(15 23 41 / 0.2);
-}
-
 .bg-purple-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 232 255 / var(--tw-bg-opacity, 1));
@@ -1512,10 +1508,6 @@ a:hover {
 .bg-yellow-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1));
-}
-
-.bg-secondary\/20 {
-  background-color: rgb(204 153 51 / 0.2);
 }
 
 .bg-opacity-20 {
