@@ -80,16 +80,10 @@ function link_4($link, $class = '')
 function link_5($link, $class = '')
 {
 ?>
-
-    <a
-        href="<?php echo $link['url']; ?>"
-        title="<?php echo $link['title']; ?>"
-        target="_blank"
-        class="inline-flex items-center group text-[#FF700A] hover:text-white px-5 py-2.5 rounded-lg bg-transparent hover:bg-[#FF700A] border border-[#FF700A] hover:border-[#FF700A] transition-all duration-300 font-medium hover:shadow-md btn-shadow-animate <?php echo esc_attr($class); ?>">
-        <span class="mr-2"><?php echo __('Read more', 'maxwell'); ?></span>
-
+    <a href="<?php echo esc_url($link['url']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-2 border-primary bg-transparent hover:!text-white hover:bg-primary h-9 rounded-md px-4 <?php echo esc_attr($class); ?>">
+        <?php echo esc_html($link['title']); ?>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-            class="w-4 h-3 ml-2 transition-transform duration-200 ease-in-out group-hover:translate-x-1">
+            class="w-3 h-3">
             <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
         </svg>
     </a>
