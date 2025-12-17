@@ -7,7 +7,7 @@ $blocks_class = isset($block['className']) ? $block['className'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('feature_3');
 $background_color = $data['background_color'] ?? '#fff';
-?>
+?> 
 <style>
     .features-3-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo esc_attr($background_color); ?> !important;
@@ -18,7 +18,7 @@ $background_color = $data['background_color'] ?? '#fff';
     }
 </style>
 <section id="<?php echo esc_attr($anchor); ?>" class="py-8 sm:py-12 lg:py-18 features-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> bg-pattern">
-    <div class="container items-center justify-center mx-auto">
+    <div class="container items-center justify-center mx-auto px-3">
         <div class="text-center mb-16 max-w-2xl mx-auto">
             <?php if ($data['top_title']) : ?>
                 <span class="inline-block mb-4 maxwell-top-title"><?php echo $data['top_title']; ?></span>
