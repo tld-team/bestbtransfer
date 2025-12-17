@@ -33,9 +33,9 @@ $background_color = $data['background_color'] ?? '#fff';
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php foreach ($data['items'] as $item) : ?>
                 <?php if (!empty($item['link']['url'])) : ?>
-                    <a class="group rounded-2xl overflow-hidden shadow-lg bg-white" href="<?php echo $item['link']['url'] ?>">
+                    <a class="group rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-white" href="<?php echo $item['link']['url'] ?>">
                     <?php else : ?>
-                        <div class="group rounded-2xl overflow-hidden shadow-lg bg-white">
+                        <div class="group rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-white">
                         <?php endif; ?>
                         <div class="relative h-56 overflow-hidden">
                             <?php if ($item['image']) : ?>
