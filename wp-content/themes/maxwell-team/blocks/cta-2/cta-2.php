@@ -34,8 +34,12 @@ $background_color = $data['background_color']?? "#000";
                 <div class="content-list-link mb-8 opacity-90 text-white text-xl"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <?php link_1($data['link_1']) ?>
-                <?php link_2($data['link_2']) ?>
+                <?php if (!empty($data['link_1'])) : ?>
+                    <?php link_1($data['link_1']) ?>
+                <?php endif; ?>
+                <?php if (!empty($data['link_2'])) : ?>
+                    <?php link_2($data['link_2']) ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
