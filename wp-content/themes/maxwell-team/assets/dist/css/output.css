@@ -934,16 +934,16 @@ a:hover {
   margin-top: 1rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .block {
@@ -1357,11 +1357,6 @@ a:hover {
   border-color: rgb(240 111 64 / var(--tw-border-opacity, 1));
 }
 
-.border-\[\#FF700A\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 112 10 / var(--tw-border-opacity, 1));
-}
-
 .border-button {
   --tw-border-opacity: 1;
   border-color: rgb(188 143 53 / var(--tw-border-opacity, 1));
@@ -1492,6 +1487,10 @@ a:hover {
   background-color: rgb(204 153 51 / 0.1);
 }
 
+.bg-secondary\/5 {
+  background-color: rgb(204 153 51 / 0.05);
+}
+
 .bg-teal-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(13 148 136 / var(--tw-bg-opacity, 1));
@@ -1515,17 +1514,8 @@ a:hover {
   background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1));
 }
 
-.bg-secondary\/50 {
-  background-color: rgb(204 153 51 / 0.5);
-}
-
-.bg-secondary\/5 {
-  background-color: rgb(204 153 51 / 0.05);
-}
-
-.\!bg-secondary {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(204 153 51 / var(--tw-bg-opacity, 1)) !important;
+.bg-secondary\/20 {
+  background-color: rgb(204 153 51 / 0.2);
 }
 
 .bg-opacity-20 {
@@ -1698,6 +1688,11 @@ a:hover {
   padding: 2rem;
 }
 
+.\!py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1711,11 +1706,6 @@ a:hover {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 .px-6 {
@@ -1741,11 +1731,6 @@ a:hover {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
 }
 
 .py-3 {
@@ -1776,16 +1761,6 @@ a:hover {
 .py-\[100px\] {
   padding-top: 100px;
   padding-bottom: 100px;
-}
-
-.\!py-6 {
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
-}
-
-.\!py-4 {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
 }
 
 .pb-12 {
@@ -1824,8 +1799,9 @@ a:hover {
   font-family: Roboto, sans-serif;
 }
 
-.font-heading {
-  font-family: Montserrat, sans-serif;
+.\!text-lg {
+  font-size: 18px !important;
+  line-height: 22px !important;
 }
 
 .text-2xl {
@@ -1841,11 +1817,6 @@ a:hover {
 .text-5xl {
   font-size: 70px;
   line-height: 1.1;
-}
-
-.text-base {
-  font-size: 16px;
-  line-height: 20px;
 }
 
 .text-lg {
@@ -1868,9 +1839,8 @@ a:hover {
   line-height: 16px;
 }
 
-.\!text-lg {
-  font-size: 18px !important;
-  line-height: 22px !important;
+.\!font-semibold {
+  font-weight: 600 !important;
 }
 
 .font-bold {
@@ -1885,10 +1855,6 @@ a:hover {
   font-weight: 600;
 }
 
-.\!font-semibold {
-  font-weight: 600 !important;
-}
-
 .\!text-primary {
   --tw-text-opacity: 1 !important;
   color: rgb(15 23 41 / var(--tw-text-opacity, 1)) !important;
@@ -1897,11 +1863,6 @@ a:hover {
 .\!text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
-}
-
-.text-\[\#FF700A\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 112 10 / var(--tw-text-opacity, 1));
 }
 
 .text-amber-400 {
@@ -2317,16 +2278,6 @@ a:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:border-\[\#FF700A\]:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 112 10 / var(--tw-border-opacity, 1));
-}
-
-.hover\:bg-\[\#FF700A\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 112 10 / var(--tw-bg-opacity, 1));
-}
-
 .hover\:bg-amber-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1));
@@ -2438,11 +2389,6 @@ a:hover {
 .hover\:text-secondary:hover {
   --tw-text-opacity: 1;
   color: rgb(204 153 51 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {

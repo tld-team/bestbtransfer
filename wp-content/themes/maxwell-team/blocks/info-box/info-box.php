@@ -19,9 +19,9 @@ $data = get_field('info_box');
                 <?php foreach ($data['items'] as $item) : ?>
                     <div class="flex items-center gap-3">
                         <?php if ($item['icon']) : ?>
-                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center">
                                 <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                    <?php echo maxwell_render_svg($item['icon']['url'], 'text-primary w-8 h-8'); ?>
+                                    <?php echo maxwell_render_svg($item['icon']['url'], 'text-secondary w-8 h-8'); ?>
                                 <?php else: ?>
                                     <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>">
                                 <?php endif; ?>
