@@ -31,7 +31,7 @@ $background_color = $data['background_color']?? "#000";
                 <h2 class="h2-responsive mb-4 text-white"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
             <?php if (!empty($data['description'])) : ?>
-                <div class="content-list-link mb-8 opacity-90 text-white"><?php echo apply_filters('the_content', $data['description']); ?></div>
+                <div class="content-list-link mb-8 opacity-90 text-white text-xl"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <?php link_1($data['link_1']) ?>
