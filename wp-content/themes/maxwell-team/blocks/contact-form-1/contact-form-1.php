@@ -1,71 +1,49 @@
-
 <!-- Hero Sekcija -->
- <?php
+<?php
 $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
+$data = get_field('contact_form_1');
 ?>
-<!-- 5. Call to Action sa formom -->
-    <section class="py-8 sm:py-12 lg:py-18 bg-gradient-to-r from-primary to-blue-600 text-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="h2-responsive mb-6">Get a Personalized Quote</h2>
-                        <p class="text-xl mb-8 opacity-90">Tell us about your travel needs, and we'll provide you with a customized quote for your transfer service.</p>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-                                <span class="text-lg">No obligation quote</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-                                <span class="text-lg">Response within 2 hours</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-secondary mr-3 text-xl"></i>
-                                <span class="text-lg">Best price guarantee</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-2xl p-8 text-dark shadow-2xl">
-                        <h3 class="h3-responsive mb-6 text-center">Quick Quote Request</h3>
-                        <form class="space-y-4">
-                            <div>
-                                <label class="block text-gray-700 mb-2">Full Name</label>
-                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2">Email Address</label>
-                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2">Service Type</label>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                                    <option>Airport Transfer</option>
-                                    <option>International Trip</option>
-                                    <option>City Tour</option>
-                                    <option>Wine Tour</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-gray-700 mb-2">Pickup Location</label>
-                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="City or address">
+
+<section class="py-16 sm:py-20 lg:py-24 cta-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+    <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div>
+                <?php if (!empty($data['title'])) : ?>
+                    <h2 class="h3-responsive mb-8"><?php echo esc_html($data['title']); ?></h2>
+                <?php endif; ?>
+                <?php if (!empty($data['data'])) : ?>
+                    <div class="space-y-6">
+                    <?php foreach ($data['data'] as $item): ?>
+                            <div class="flex items-start gap-4 px-6 py-4 rounded-xl bg-secondary/5 border border-secondary/20 transition-transform duration-300 hover:translate-y-1">
+                                <div class="w-18 h-18 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
+                                    <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) {
+                                        echo maxwell_render_svg($item['icon']['url'], 'text-secondary rounded-md p-4');
+                                    } else {
+                                    ?>
+                                        <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-20 h-20">
+                                    <?php } ?>
                                 </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2">Destination</label>
-                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="City or address">
+                                <?php if (!empty($item['text'])) : ?>
+                                <div class="content-list-link ul">
+                                    <?php echo apply_filters('the_content', $item['text']); ?>
                                 </div>
+                                <?php endif; ?>
                             </div>
-                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition mt-4">
-                                Get My Quote
-                            </button>
-                        </form>
+                        <?php endforeach; ?>
                     </div>
-                </div>
+                <?php endif; ?>
+            </div>
+            <div class="bg-white rounded-2xl p-8 border border-border/50 shadow-lg">
+                <?php if (!empty($data['form_title'])) : ?>
+                    <h2 class="font-heading text-3xl font-bold text-primary mb-6"><?php echo esc_html($data['form_title']); ?></h2>
+                <?php endif; ?>
+                <?php if (!empty($data['form_text'])) : ?>
+                    <div class="text-muted-foreground mb-8"><?php echo apply_filters('the_content', $data['form_text']); ?></div>
+                <?php endif; ?>
+                <?php echo do_shortcode('[contact-form-7 id="' . $data['choose_form'] . '"]'); ?>
             </div>
         </div>
-    </section>
+    </div>
+</section>

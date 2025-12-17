@@ -46,6 +46,16 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/contact-form-1/contact-form-1.php',
+		'enqueue_assets'    => function() {
+                // Enqueue block styles
+                wp_enqueue_style(
+                    'contact-form-block-style',
+                    get_template_directory_uri() . '/blocks/contact-form-1/blocks.css',
+                    array(),
+                    '1.0.0'
+                );
+            },
+
 	));
 
 	/**
