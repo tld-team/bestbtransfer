@@ -72,11 +72,13 @@ $background_color = $data['background_color'] ?? '#fff';
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-                    <div class="mt-6 space-y-3 mx-auto">
-                        <?php link_5($data['link'], 'w-full !py-4 !text-lg !font-semibold') ?>
-                        <?php if (!empty($data['pricing_contact'])) : ?>
-                            <p class="text-center"><?php echo $data['pricing_contact']; ?></p>
-                        <?php endif; ?>
-                    </div>
+                <div class="mt-6 space-y-3 mx-auto">
+                    <?php link_5($data['link'], 'w-full !py-4 !text-lg !font-semibold') ?>
+                    <?php if (!empty($data['pricing_contact'])) : ?>
+                        <p class="text-center"><?php echo $data['pricing_contact']; ?></p>
+                    <?php endif; ?>
+                </div>
             </div>
+        </div>
+    </div>
 </section>
