@@ -80,13 +80,15 @@ function mma_future_setup()
 	register_nav_menus(
 		array(
 			'primary' => esc_html__('Primary', 'mma-future'),
+			'footer-menu-1' => esc_html__('Footer Menu 1', 'mma-future'),
+			'footer-menu-2' => esc_html__('Footer Menu 2', 'mma-future'),
 		)
 	);
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	* Switch default core markup for search form, comment form, and comments
+	* to output valid HTML5.
+	*/
 	add_theme_support(
 		'html5',
 		array(
@@ -189,9 +191,6 @@ function mma_future_scripts()
 	// }
 
 	wp_enqueue_script('main', get_template_directory_uri() . '/assets/dist/js/main.js', array(), _S_VERSION, true);
-
-	/** ================================================================================================================ */
-
 
 	/** ==============================            default styles and scripts            ============================== */
 

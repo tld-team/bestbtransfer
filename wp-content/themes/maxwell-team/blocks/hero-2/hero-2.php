@@ -34,7 +34,7 @@ $is_centered = str_contains($blocks_class, 'is-centered');
              alt="<?php echo esc_attr($bg_image['alt'] ?? ''); ?>"
              srcset="<?php echo $bg_image['srcset']; ?>"
              sizes="100vw"
-             class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
+             class="absolute inset-0 w-full !h-full object-cover" fetchpriority="high">
         <?php endif; ?>
         
         <!-- Overlay layer - koristi custom klasu -->
