@@ -30,7 +30,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                 alt="<?php echo esc_attr($bg_image['alt'] ?? ''); ?>"
                 srcset="<?php echo $bg_image['srcset']; ?>"
                 sizes="100vw"
-                class="absolute inset-0 w-full h-full object-cover overflow-hidden" fetchpriority="high">
+                class="absolute inset-0 w-full !h-full object-cover overflow-hidden" fetchpriority="high">
         <?php endif; ?>
 
         <!-- Overlay layer - koristi custom klasu -->
