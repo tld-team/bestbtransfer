@@ -20,6 +20,9 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
     .overlay-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo $overlay_color ?> !important;
     }
+    .block-editor__container img {
+        height: 100% !important;
+    }
 </style>
 
 <section class="hero-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " id="<?php echo esc_attr($anchor); ?>">
