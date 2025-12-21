@@ -161,104 +161,107 @@ function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page =
 }
 
 
-function add_call_menu_icons()
+
+/**
+ * Super optimized floating buttons - minimal code
+ */
+function add_super_optimized_buttons()
 {
-	echo '
-    <style>
-        /* Stil za glavni meni ikonu */
-        .phone-float {
-            position: fixed;
-            bottom: 48px;
-            right: 20px;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-			background-color: #fff;
-            cursor: pointer;
-        }
 
-        .phone-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+	$contact_data = get_field('contact_options', 'options');
 
-        .call-icons {
-            position: fixed;
-            bottom: 122px;
-            right: 20px;
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
+	$wa = $contact_data['whatsapp'];
+	$vb = $contact_data['viber'];
 
-        .call-icons .icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+	// Desktop
+?>
+	<style>
+		.fb {
+			z-index: 9999;
+			position: fixed
+		}
 
-        .call-icons .icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+		.d-btns {
+			bottom: 50%;
+			right: 1.5rem
+		}
 
-        .call-icons .icon img {
-            width: 40px;
-            height: 40px;
-        }
+		.m-btns {
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #fff;
+			border-top: 1px solid #e5e7eb
+		}
 
-        .icon.whatsapp {
-            background-color: #25D366;
-        }
+		@media(max-width:767px) {
+			.d-btns {
+				display: none
+			}
+		}
 
-        .icon.viber {
-            background-color: #e2c2f8ff;
-        }
-    </style>
+		@media(min-width:768px) {
+			.m-btns {
+				display: none
+			}
+		}
+	</style>
 
-    <div class="phone-float" id="phoneMenu">
-        <img src="/wp-content/themes/maxwell-team/assets/dist/icon/phone.svg" alt="Phone" style="width: 30px; height: 30px;">
-    </div>
-    <div class="call-icons" id="callIcons">
-        <div class="icon whatsapp">
-            <a href="https://wa.me/381692784544?text=Zdravo!%20Imam%20pitanje%20u%20vezi%20sa%20vašim%20uslugama." target="_blank" style="display: flex;">
-                <img src="/wp-content/themes/maxwell-team/assets/dist/icon/whatsapp.svg" alt="WhatsApp">
-            </a>
-        </div>
-        <div class="icon viber">
-            <a  href="viber://chat?number=+381692784544&text=Pozdrav!%20Želeo%20bih%20više%20informacija." style="display: flex;">
-                <img src="/wp-content/themes/maxwell-team/assets/dist/icon/viber.svg" alt="Viber">
-            </a>
-        </div>
-    </div>
+	<div class="fixed right-6 top-1/2 -translate-y-1/2 z-[9999] hidden md:flex flex-col gap-3">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const phoneMenu = document.getElementById("phoneMenu");
-            const callIcons = document.getElementById("callIcons");
+		<!-- WhatsApp -->
+		<a href="https://wa.me/<?php echo $wa; ?>"
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="WhatsApp"
+			class="flex h-14 w-14 items-center justify-center rounded-xl bg-[#25D366] shadow-lg transition hover:scale-105 hover:shadow-xl">
 
-            phoneMenu.addEventListener("click", function() {
-                const isVisible = callIcons.style.display === "flex";
-                callIcons.style.display = isVisible ? "none" : "flex";
-            });
-        });
-    </script>
-    ';
+			<?php echo maxwell_render_svg($contact_data['whatsapp_icon']['url'], 'w-8 h-8 text-white'); ?>
+		</a>
+
+		<!-- Viber -->
+		<a href="viber://add?number=<?php echo $vb; ?>"
+			aria-label="Viber"
+			class="flex h-14 w-14 items-center justify-center rounded-xl bg-[#7360F2] shadow-lg transition hover:scale-105 hover:shadow-xl">
+
+			<?php echo maxwell_render_svg($contact_data['viber_icon']['url'], 'w-8 h-8 text-white'); ?>
+		</a>
+
+	</div>
+
+
+	<div class="fixed bottom-0 left-0 right-0 z-[9999] md:hidden grid grid-cols-2 border-t border-gray-200 bg-white">
+
+		<!-- WhatsApp -->
+		<a href="https://wa.me/<?php echo $contact_data['whatsapp']; ?>"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="flex items-center justify-center bg-[#25D366] py-4 transition hover:brightness-110">
+
+			<?php if (!empty($contact_data['whatsapp_icon']) && $contact_data['whatsapp_icon']['subtype'] === 'svg+xml') : ?>
+				<?php echo maxwell_render_svg($contact_data['whatsapp_icon']['url'], 'w-8 h-8 text-white'); ?>
+			<?php endif; ?>
+		</a>
+
+		<!-- Viber -->
+		<a href="viber://chat?number=<?php echo $contact_data['viber']; ?>"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="flex items-center justify-center bg-[#7360F2] py-4 transition hover:brightness-110">
+
+			<?php if (!empty($contact_data['viber_icon']) && $contact_data['viber_icon']['subtype'] === 'svg+xml') : ?>
+				<?php echo maxwell_render_svg($contact_data['viber_icon']['url'], 'w-8 h-8 text-white'); ?>
+			<?php endif; ?>
+		</a>
+
+	</div>
+
+<?php
 }
-add_action('wp_footer', 'add_call_menu_icons');
+
+add_action('wp_footer', 'add_super_optimized_buttons');
+
+
 
 
 /**
