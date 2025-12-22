@@ -16,7 +16,7 @@ module.exports = {
         background: '#1A294B',
         secondary: {
           DEFAULT: '#CC9933',
-          'secondary-light': '#F9F4E9', 
+          'secondary-light': '#F9F4E9',
         },
         button: '#BC8F35'
       },
@@ -129,11 +129,11 @@ module.exports = {
           }
         },
         softPulse: {
-          '0%, 100%': { 
+          '0%, 100%': {
             opacity: '1',
             transform: 'scale(1)'
           },
-          '50%': { 
+          '50%': {
             opacity: '0.9',
             transform: 'scale(1.01)'
           }
@@ -141,5 +141,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ]
 }
