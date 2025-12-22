@@ -35,7 +35,7 @@
             if ($menu_1) :
             ?>
                 <div>
-                    <h4 class="text-slate-50 font-bold text-lg mb-6"><?php echo $menu_1->name ?></h4>
+                    <h2 class="text-slate-50 font-bold text-lg mb-6"><?php echo $menu_1->name ?></h2>
                     <ul class="space-y-3">
                         <?php foreach ($menu_1_items as $item) : ?>
                             <li>
@@ -56,7 +56,7 @@
             if ($menu_2) :
             ?>
                 <div>
-                    <h4 class="text-slate-50 font-bold text-lg mb-6"><?php echo $menu_2->name ?></h4>
+                    <h2 class="text-slate-50 font-bold text-lg mb-6"><?php echo $menu_2->name ?></h2>
                     <ul class="space-y-3">
                         <?php foreach ($menu_2_items as $item) : ?>
                             <li>
@@ -70,7 +70,7 @@
             <?php endif; ?>
 
             <div>
-                <h4 class="text-slate-50 font-bold text-lg mb-6">Contact Us</h4>
+                <h2 class="text-slate-50 font-bold text-lg mb-6">Contact Us</h2>
                 <ul class="space-y-4">
                     <li>
                         <a href="tel:+38641123456" class="flex items-center gap-3 text-slate-50 hover:text-secondary transition-colors">

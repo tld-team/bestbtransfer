@@ -172,41 +172,7 @@ function add_super_optimized_buttons()
 
 	$wa = $contact_data['whatsapp'];
 	$vb = $contact_data['viber'];
-
-	// Desktop
 ?>
-	<style>
-		.fb {
-			z-index: 9999;
-			position: fixed
-		}
-
-		.d-btns {
-			bottom: 50%;
-			right: 1.5rem
-		}
-
-		.m-btns {
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: #fff;
-			border-top: 1px solid #e5e7eb
-		}
-
-		@media(max-width:767px) {
-			.d-btns {
-				display: none
-			}
-		}
-
-		@media(min-width:768px) {
-			.m-btns {
-				display: none
-			}
-		}
-	</style>
-
 	<div class="fixed right-6 top-1/2 -translate-y-1/2 z-[9999] hidden md:flex flex-col gap-3">
 
 		<!-- WhatsApp -->
@@ -234,6 +200,7 @@ function add_super_optimized_buttons()
 
 		<!-- WhatsApp -->
 		<a href="https://wa.me/<?php echo $contact_data['whatsapp']; ?>"
+			aria-label="Send a WhatsApp message"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="flex items-center justify-center bg-[#25D366] py-4 transition hover:brightness-110">
@@ -245,6 +212,7 @@ function add_super_optimized_buttons()
 
 		<!-- Viber -->
 		<a href="viber://chat?number=<?php echo $contact_data['viber']; ?>"
+			aria-label="Send a Viber message"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="flex items-center justify-center bg-[#7360F2] py-4 transition hover:brightness-110">
@@ -314,7 +282,7 @@ function add_inline_contact()
 				<a href="https://wa.me/<?php echo esc_attr($whatsapp_formatted); ?>?text=<?php echo urlencode('Zdravo! Imam pitanje u vezi sa vašim uslugama.'); ?>"
 					target="_blank"
 					class="group inline-flex items-center gap-2 pr-3 py-2 bg-white text-green-600 hover:bg-green-50 transition-all duration-200 text-sm font-medium">
-					<div class="!w-8 !h-8 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-600 group-hover:text-green-50 transition-colors duration-200">
+					<div class="!w-8 !h-8 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-600 group-hover:text-green-50 transition-colors duration-200">
 
 						<?php if (!empty($contact_options['whatsapp_icon']['subtype'] == 'svg+xml')) {
 							echo maxwell_render_svg($contact_options['whatsapp_icon']['url'], 'w-7 h-7 p-1');
@@ -326,7 +294,7 @@ function add_inline_contact()
 						} ?>
 
 					</div>
-					<span>WhatsApp</span>
+					<span class="text-green-900 group-hover:text-green-900">WhatsApp</span>
 				</a>
 			<?php endif; ?>
 
@@ -347,7 +315,7 @@ function add_inline_contact()
 						} ?>
 
 					</div>
-					<span>Viber</span>
+					<span class="text-purple-900 group-hover:text-purple-900">Viber</span>
 				</a>
 			<?php endif; ?>
 
