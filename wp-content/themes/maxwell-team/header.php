@@ -66,7 +66,7 @@
 
 							$svg_path = get_template_directory_uri() . '/assets/dist/icon/' . $key . '.svg';
 						?>
-							<a href="<?php echo $media; ?>" class="hover:text-secondary hover:scale-110 transition-all duration-300">
+							<a href="<?php echo $media; ?>" class="hover:text-secondary hover:scale-110 transition-all duration-300" aria-label="<?php echo ucfirst($key); ?> social media link">
 								<?php if (!empty($svg_path)): ?>
 									<?php echo maxwell_render_svg($svg_path, 'w-4 h-4'); ?>
 								<?php endif; ?>
