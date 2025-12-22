@@ -6,7 +6,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('popular_3');
 ?>
 <style>
-    .popular-2-<?php echo esc_attr($blocks_id); ?> {
+    .popular-3-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
     }
 
@@ -67,7 +67,7 @@ $data = get_field('popular_3');
     }
 </style>
 <!-- Popular Tours Section -->
-<section class="py-8 sm:py-12 lg:py-18 popular-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="py-8 sm:py-12 lg:py-18 popular-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['top_title'])) : ?>
@@ -171,3 +171,81 @@ $data = get_field('popular_3');
         <?php endif; ?>
     </div>
 </section>
+
+<script>
+(function() {
+    // Selektuj sve Swiper kontejnere unutar popular-3 blokova
+    var containers = document.querySelectorAll('.tours-swiper');
+
+    function initSwiper(container) {
+        if (!container) return;
+
+        if (typeof Swiper === 'undefined') {
+            console.log('Swiper nije učitan još uvek');
+            return false;
+        }
+
+        if (container.swiper) {
+            console.log('Swiper je već inicijalizovan za ovaj container');
+            return true;
+        }
+
+        console.log('Inicijalizujem Swiper za:', container);
+
+        var swiperInstance = new Swiper(container, {
+            slidesPerView: 1.2,
+            spaceBetween: 16,
+            loop: true,
+            grabCursor: true,
+            pagination: {
+                el: container.querySelector('.swiper-pagination'),
+                clickable: true,
+            },
+            navigation: {
+                nextEl: container.querySelector('.swiper-button-next'),
+                prevEl: container.querySelector('.swiper-button-prev'),
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 24 }
+            },
+            on: {
+                init: function() {
+                    console.log('Swiper uspešno inicijalizovan za:', container);
+                }
+            }
+        });
+
+        container.swiper = swiperInstance;
+        return true;
+    }
+
+    function tryInitAll(attempt = 0) {
+        if (attempt > 10) {
+            console.log('Prekinuto nakon 10 pokušaja za sve Swipere');
+            return;
+        }
+
+        var allInit = true;
+        containers.forEach(function(container) {
+            if (!initSwiper(container)) {
+                allInit = false;
+            }
+        });
+
+        if (!allInit) {
+            setTimeout(function() {
+                tryInitAll(attempt + 1);
+            }, 200);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(tryInitAll, 100);
+        });
+    } else {
+        setTimeout(tryInitAll, 100);
+    }
+})();
+</script>
