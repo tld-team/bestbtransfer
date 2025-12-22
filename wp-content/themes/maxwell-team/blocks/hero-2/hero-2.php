@@ -26,7 +26,7 @@ $is_centered = str_contains($blocks_class, 'is-centered');
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="hero-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
+<section id="<?php echo esc_attr($anchor); ?>" class="hero-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="relative py-16 sm:py-20 lg:py-36">    
         <?php if ($bg_image) : ?>
         <img src="<?php echo esc_url($bg_image['url']); ?>" 
