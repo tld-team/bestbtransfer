@@ -81,14 +81,14 @@
 	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white py-4 sm:py-3 bg-[#F3F4F5] shadow-sm border-b border-border/50">
 		<div class="w-full mx-auto">
 			<nav class="nav-container px-4">
-				<div class="flex items-center justify-between text-lg text-primary">
+				<div class="flex items-center justify-between text-base text-primary">
 					<!-- Logo -->
-					<div class="flex items-center">
+					<div class="flex-shrink-0">
 						<?php the_custom_logo(); ?>
 					</div>
 
 					<!-- Desktop Menu -->
-					<div class="hidden md:flex items-center space-x-8">
+					<div class="hidden md:flex flex-1 justify-center items-center space-x-8">
 						<?php
 						// Get the primary menu
 						$menu_items = wp_get_nav_menu_items('menu-1');
@@ -99,16 +99,16 @@
 								});
 
 								if (!empty($children)) {
-									// This is a dropdown item
+									// Dropdown item
 						?>
 									<div class="dropdown relative">
 										<button class="flex items-center transition-colors font-medium">
 											<span><?php echo $item->title; ?></span>
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="ml-1 text-xs"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. -->
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="ml-1 text-xs">
 												<path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
 											</svg>
 										</button>
-										<div class="dropdown-content absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-10 border">
+										<div class="dropdown-content absolute left-1/2 transform -translate-x-1/2 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-10 border">
 											<?php foreach ($children as $child) { ?>
 												<a href="<?php echo $child->url; ?>" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">
 													<?php echo $child->title; ?>
@@ -118,7 +118,7 @@
 									</div>
 								<?php
 								} else {
-									// This is a simple menu item
+									// Simple menu item
 								?>
 									<a href="<?php echo $item->url; ?>" class="transition-colors font-medium">
 										<?php echo $item->title; ?>
@@ -128,31 +128,21 @@
 							}
 						}
 						?>
+					</div>
 
-						<!-- Language Selector -->
-						<!-- <div class="dropdown relative">
-							<button class="flex items-center transition-colors font-medium">
-								<i class="fas fa-globe mr-1"></i>
-								<span>EN</span>
-								<i class="fas fa-chevron-down ml-1 text-xs"></i>
-							</button>
-							<div class="dropdown-content absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg py-2 z-10 border">
-								<a href="#" class="block px-4 py-2 hover:bg-teal-50">English</a>
-								<a href="#" class="block px-4 py-2 hover:bg-teal-50">Español</a>
-								<a href="#" class="block px-4 py-2 hover:bg-teal-50">Français</a>
-							</div>
-						</div> -->
-
+					<!-- Call Button -->
+					<div class="hidden md:flex flex-shrink-0">
 						<?php link_4(['url' => '#', 'title' => 'Call us +386 5 222 222']) ?>
 					</div>
 
 					<!-- Mobile Menu Button -->
 					<button class="md:hidden text-button" id="menu4-toggle" aria-label="Toggle navigation" aria-expanded="false">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. -->
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6">
 							<path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
 						</svg>
 					</button>
 				</div>
+
 
 				<!-- Mobile Menu -->
 				<div class="mobile-menu md:hidden mt-4" id="menu4">
