@@ -4,7 +4,7 @@ $social_network = get_field('social_network', 'option');
 ?>
 
 <footer class="bg-background text-white">
-    <div class="container py-16 mx-auto">
+    <div class="container py-16 px-4 mx-auto">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
             <div>
                 <div class="flex items-center gap-3 mb-6">
