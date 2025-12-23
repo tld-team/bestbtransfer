@@ -152,6 +152,20 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/features-1/features-1.php',
+		'enqueue_assets' => function () {
+			if (!wp_script_is('features-1', 'enqueued')) {
+				wp_enqueue_script(
+					'features-1',
+					get_template_directory_uri() . '/blocks/features-1/features-1.js',
+					array(),
+					_S_VERSION,
+					array(
+						'strategy'  => 'defer', // Koristi defer za bolje performance
+						'in_footer' => true
+					)
+				);
+			}
+		}
 	));
 
 	/**
@@ -320,7 +334,6 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/popular-3/popular-3.php',
-
 		'enqueue_assets' => function () {
 			if (!wp_script_is('swiper', 'enqueued')) {
 				wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
@@ -328,10 +341,6 @@ if (function_exists('acf_register_block_type')) {
 
 			if (!wp_style_is('swiper', 'enqueued')) {
 				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
-			}
-
-			if (!wp_script_is('popular-3', 'enqueued')) {
-				wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array('swiper'), _S_VERSION, true);
 			}
 		}
 	));
