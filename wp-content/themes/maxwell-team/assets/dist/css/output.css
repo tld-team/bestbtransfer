@@ -1613,11 +1613,6 @@ a:hover {
   border-top-width: 1px;
 }
 
-.border-\[\#F06F40\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(240 111 64 / var(--tw-border-opacity, 1));
-}
-
 .border-button {
   --tw-border-opacity: 1;
   border-color: rgb(188 143 53 / var(--tw-border-opacity, 1));
@@ -1638,6 +1633,11 @@ a:hover {
   border-color: rgb(15 23 41 / var(--tw-border-opacity, 1));
 }
 
+.border-secondary {
+  --tw-border-opacity: 1;
+  border-color: rgb(204 153 51 / var(--tw-border-opacity, 1));
+}
+
 .border-secondary\/20 {
   border-color: rgb(204 153 51 / 0.2);
 }
@@ -1655,11 +1655,6 @@ a:hover {
 .bg-\[\#7360F2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(115 96 242 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#F06F40\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 111 64 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#F3F4F5\] {
@@ -2642,9 +2637,9 @@ a:hover {
   --tw-gradient-to: #15803d var(--tw-gradient-to-position);
 }
 
-.hover\:\!text-\[\#F06F40\]:hover {
+.hover\:\!text-secondary:hover {
   --tw-text-opacity: 1 !important;
-  color: rgb(240 111 64 / var(--tw-text-opacity, 1)) !important;
+  color: rgb(204 153 51 / var(--tw-text-opacity, 1)) !important;
 }
 
 .hover\:\!text-white:hover {
@@ -2684,8 +2679,8 @@ a:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:shadow-\[\#F06F40\]\/20:hover {
-  --tw-shadow-color: rgb(240 111 64 / 0.2);
+.hover\:shadow-secondary\/20:hover {
+  --tw-shadow-color: rgb(204 153 51 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
 }
 

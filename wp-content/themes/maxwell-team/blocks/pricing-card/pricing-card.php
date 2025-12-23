@@ -28,7 +28,7 @@ $data = get_field('pricing_card');
         <?php if (!empty($data['items'])) : ?>
             <div class="grid gap-10 md:grid-cols-3">
                 <?php foreach ($data['items'] as $key => $item) : ?>
-                    <div class="group bg-secondary/10 rounded-3xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md <?php echo ($key + 1) % 2 == 0 ? "ring-2 ring-secondary/40" : ""; ?>">
+                    <div class="group bg-secondary/10 rounded-3xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4 <?php echo ($key + 1) % 2 == 0 ? "ring-2 ring-secondary/40" : ""; ?>">
                         <?php if (!empty($item['title'])) : ?>
                             <h3 class="text-2xl font-semibold text-[#0F1729] mb-1">
                                 <?php echo esc_html($item['title']); ?>
