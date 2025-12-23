@@ -18,7 +18,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
         <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div class="<?php echo $revers ? 'lg:order-2' : 'lg:order-1'; ?>">
                 <?php if (!empty($data['top_title'])) : ?>
-                    <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
+                    <p class="maxwell-top-title"><?php echo $data['top_title']; ?></p>
                 <?php endif; ?>
 
                 <?php if (!empty($data['title'])) : ?>

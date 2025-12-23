@@ -35,7 +35,7 @@ $data = get_field('features_1');
     <div class="container mx-auto flex flex-col items-center justify-center">
         <div class="text-center mb-12 ">
             <?php if ($data['top_title']) : ?>
-                <span class="maxwell-top-title mb-2"><?php echo esc_html($data['top_title']); ?></span>
+                <p class="maxwell-top-title mb-2"><?php echo esc_html($data['top_title']); ?></p>
             <?php endif; ?>
 
             <?php if ($data['title']) : ?>

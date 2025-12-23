@@ -249,9 +249,9 @@
 }
 
 .maxwell-top-title {
-  @apply px-4 py-2 bg-secondary/50 rounded-full text-primary font-semibold mb-4;
+  @apply px-4 py-2 bg-secondary/20 rounded-full text-primary font-semibold inline-block mb-2;
 }
 
 .hero-top-title {
-  @apply  px-4 py-2 bg-secondary/50 rounded-full text-primary font-semibold mb-4;
+  @apply  px-4 py-2 bg-secondary/20 rounded-full text-primary font-semibold inline-block mb-2;
 }

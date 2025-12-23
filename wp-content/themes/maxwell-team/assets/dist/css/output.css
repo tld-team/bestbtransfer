@@ -1015,12 +1015,12 @@ a:hover {
   bottom: 0px;
 }
 
-.bottom-4 {
-  bottom: 1rem;
+.bottom-20 {
+  bottom: 5rem;
 }
 
-.bottom-8 {
-  bottom: 2rem;
+.bottom-4 {
+  bottom: 1rem;
 }
 
 .left-0 {
@@ -1061,22 +1061,6 @@ a:hover {
 
 .top-4 {
   top: 1rem;
-}
-
-.bottom-12 {
-  bottom: 3rem;
-}
-
-.bottom-16 {
-  bottom: 4rem;
-}
-
-.bottom-24 {
-  bottom: 6rem;
-}
-
-.bottom-20 {
-  bottom: 5rem;
 }
 
 .z-0 {
@@ -1441,13 +1425,13 @@ a:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-10 {
-  --tw-translate-y: 2.5rem;
+.translate-y-0 {
+  --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-0 {
-  --tw-translate-y: 0px;
+.translate-y-10 {
+  --tw-translate-y: 2.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1482,10 +1466,6 @@ a:hover {
 
 .items-start {
   align-items: flex-start;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 .items-center {
@@ -1752,6 +1732,10 @@ a:hover {
   background-color: rgb(15 23 41 / 0.05);
 }
 
+.bg-primary\/60 {
+  background-color: rgb(15 23 41 / 0.6);
+}
+
 .bg-purple-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 232 255 / var(--tw-bg-opacity, 1));
@@ -1801,14 +1785,6 @@ a:hover {
 .bg-yellow-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1));
-}
-
-.bg-primary\/10 {
-  background-color: rgb(15 23 41 / 0.1);
-}
-
-.bg-primary\/60 {
-  background-color: rgb(15 23 41 / 0.6);
 }
 
 .bg-opacity-20 {
@@ -2291,16 +2267,16 @@ a:hover {
   opacity: 0;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .opacity-80 {
   opacity: 0.8;
 }
 
 .opacity-90 {
   opacity: 0.9;
-}
-
-.opacity-100 {
-  opacity: 1;
 }
 
 .shadow-lg {
@@ -2558,9 +2534,10 @@ a:hover {
 }
 
 .maxwell-top-title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
   border-radius: 9999px;
-  background-color: rgb(204 153 51 / 0.5);
+  background-color: rgb(204 153 51 / 0.2);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -2571,9 +2548,10 @@ a:hover {
 }
 
 .hero-top-title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
   border-radius: 9999px;
-  background-color: rgb(204 153 51 / 0.5);
+  background-color: rgb(204 153 51 / 0.2);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -2646,6 +2624,10 @@ a:hover {
   background-color: rgb(15 23 41 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-primary\/90:hover {
+  background-color: rgb(15 23 41 / 0.9);
+}
+
 .hover\:bg-purple-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(250 245 255 / var(--tw-bg-opacity, 1));
@@ -2659,6 +2641,11 @@ a:hover {
 .hover\:bg-red-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 153 51 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-secondary\/90:hover {
@@ -2687,11 +2674,6 @@ a:hover {
 .hover\:bg-yellow-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(161 98 7 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-secondary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 153 51 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:from-blue-700:hover {
@@ -2851,6 +2833,11 @@ a:hover {
   color: rgb(20 83 45 / var(--tw-text-opacity, 1));
 }
 
+.group:hover .group-hover\:text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 41 / var(--tw-text-opacity, 1));
+}
+
 .group:hover .group-hover\:text-purple-50 {
   --tw-text-opacity: 1;
   color: rgb(250 245 255 / var(--tw-text-opacity, 1));
@@ -2864,11 +2851,6 @@ a:hover {
 .group:hover .group-hover\:text-secondary {
   --tw-text-opacity: 1;
   color: rgb(204 153 51 / var(--tw-text-opacity, 1));
-}
-
-.group:hover .group-hover\:text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 41 / var(--tw-text-opacity, 1));
 }
 
 .group:hover .group-hover\:brightness-0 {

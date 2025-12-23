@@ -14,7 +14,7 @@ $revers = $data['reverse'] == 'yes' ? true : false;
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <?php if (!empty($data['main_top_title'])) : ?>
-                <span class="maxwell-top-title"><?php echo $data['main_top_title']; ?></span>
+                <p class="maxwell-top-title"><?php echo $data['main_top_title']; ?></p>
             <?php endif; ?>
             <?php if (!empty($data['main_title'])) : ?>
                 <h2 class="h2-responsive mt-2 mb-4"><?php echo $data['main_title']; ?></h2>

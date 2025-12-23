@@ -21,7 +21,7 @@ $background_color = $data['background_color'] ?? '#fff';
     <div class="container items-center justify-center mx-auto px-3">
         <div class="text-center mb-16 max-w-2xl mx-auto">
             <?php if ($data['top_title']) : ?>
-                <span class="inline-block mb-4 maxwell-top-title"><?php echo $data['top_title']; ?></span>
+                <p class="maxwell-top-title"><?php echo $data['top_title']; ?></p>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
                 <h2 class="h2-responsive mb-4"><?php echo $data['title']; ?></h2>

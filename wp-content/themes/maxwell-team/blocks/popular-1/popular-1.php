@@ -16,7 +16,7 @@ $data = get_field('popular_1');
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <?php if ($data['top_title']) : ?>
-                <span class="maxwell-top-title"><?php echo esc_html($data['top_title']); ?></span>
+                <p class="maxwell-top-title"><?php echo esc_html($data['top_title']); ?></p>
             <?php endif; ?>
 
             <?php if ($data['title']) : ?>
