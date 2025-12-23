@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('font-body'); ?>>
+<body <?php body_class('font-body scroll-smooth'); ?>>
 	<?php wp_body_open(); ?>
 	<!-- <div id="page" class="site"> -->
 	<a class="skip-link screen-reader-text hidden" href="#primary"><?php esc_html_e('Skip to content', 'mma-future'); ?></a>
@@ -68,7 +68,7 @@
 						?>
 							<a href="<?php echo $media; ?>" class="hover:text-secondary hover:scale-110 transition-all duration-300" aria-label="<?php echo ucfirst($key); ?> social media link">
 								<?php if (!empty($svg_path)): ?>
-									<?php echo maxwell_render_svg($svg_path, 'w-4 h-4'); ?>
+									<?php echo maxwell_render_svg($svg_path, 'nav-svg-arrow w-4 h-4'); ?>
 								<?php endif; ?>
 							</a>
 						<?php endif; ?>

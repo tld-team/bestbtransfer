@@ -113,6 +113,20 @@ $social_network = get_field('social_network', 'option');
             <p>© <?php echo date('Y'); ?> TLD team All rights reserved.</p>
         </div>
     </div>
+
+    <!-- Back to Top Button sa custom SVG -->
+<button id="backToTop"
+        class="fixed bottom-20 md:bottom-8 right-8 bg-primary/60 text-white p-3 rounded-full shadow-lg 
+               hover:bg-secondary transition-all duration-300 hover:scale-110 
+               focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50
+               opacity-0 translate-y-10 z-50 group ">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         viewBox="0 0 448 512"
+         class="w-6 h-6 fill-current text-white group-hover:text-primary transition-colors duration-300">
+        <path d="M201.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 173.3 54.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
+    </svg>
+</button>
+    
 </footer>
 <!-- </div>#page -->
 
@@ -126,6 +140,7 @@ $social_network = get_field('social_network', 'option');
         const menu4 = document.getElementById('menu4');
 
         menu4Toggle.addEventListener('click', function() {
+            console.log('Menu 4 toggle clicked');
             menu4.classList.toggle('open');
         });
     });
@@ -145,7 +160,32 @@ $social_network = get_field('social_network', 'option');
             icon.classList.add('fa-chevron-down');
         }
     }
+
+
+    // back to top button
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Prikazivanje/digavanje dugmeta na skrol
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('opacity-0', 'translate-y-10');
+            backToTopButton.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+            backToTopButton.classList.add('opacity-0', 'translate-y-10');
+        }
+    });
+
+    // Skrol na vrh
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 </script>
 </body>
+
+</html>
 
 </html>
