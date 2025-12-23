@@ -132,7 +132,7 @@
 
 					<!-- Call Button -->
 					<div class="hidden md:flex flex-shrink-0">
-						<?php link_4(['url' => 'contact-us', 'title' => 'Contact us']) ?>
+						<?php link_4(['url' => '/contact-us', 'title' => 'Contact us']) ?>
 					</div>
 
 					<!-- Mobile Menu Button -->
@@ -194,7 +194,7 @@
 								</select>
 							</div> -->
 
-							<?php link_4(['url' => 'contact-us', 'title' => 'Contact us']) ?>
+							<?php link_4(['url' => '/contact-us', 'title' => 'Contact us']) ?>
 
 						</div>
 					</div>
