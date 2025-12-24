@@ -83,7 +83,7 @@
 			<nav class="nav-container px-4">
 				<div class="flex items-center justify-between text-base text-primary">
 					<!-- Logo -->
-					<div class="flex-shrink-0">
+					<div class="flex-shrink-0 custom-logo-link">
 						<?php the_custom_logo(); ?>
 					</div>
 
