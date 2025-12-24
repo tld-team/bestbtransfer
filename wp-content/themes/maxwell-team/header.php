@@ -78,7 +78,7 @@
 		</div>
 	</div>
 
-	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white pt-4 pb-0 md:pt-4 md:pb-0 bg-[#F3F4F5] shadow-sm border-b border-border/50">
+	<header id="masthead" class="site-header sticky top-0 z-50 w-full bg-white pt-4 pb-0 md:pt-4 md:pb-4 bg-[#F3F4F5] shadow-sm border-b border-border/50">
 		<div class="w-full mx-auto">
 			<nav class="nav-container px-4">
 				<div class="flex items-center justify-between text-base text-primary">

@@ -3011,8 +3011,8 @@ a:hover {
     padding-right: 1.5rem;
   }
 
-  .md\:pb-0 {
-    padding-bottom: 0px;
+  .md\:pb-4 {
+    padding-bottom: 1rem;
   }
 
   .md\:pt-4 {
