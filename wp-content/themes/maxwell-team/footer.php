@@ -8,12 +8,9 @@ $social_network = get_field('social_network', 'option');
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                        <span class="font-display font-bold text-xl text-secondary-foreground">ST</span>
-                    </div>
-                    <div>
-                        <span class="font-display font-bold text-xl">Slovenia</span><span class="font-display font-bold text-xl text-secondary"> Transfers</span>
-                    </div>
+                    <?php if (!empty($footer_data['logo'])) : ?>
+                        <img src="<?php echo $footer_data['logo']['url']; ?>" alt="<?php echo $footer_data['logo']['alt']; ?>">
+                    <?php endif; ?>
                 </div>
                 <?php if (!empty($footer_data['description'])) : ?>
                     <div class="mb-6"><?php echo apply_filters('the_content', $footer_data['description']); ?></div>
