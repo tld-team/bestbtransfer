@@ -115,18 +115,19 @@ $social_network = get_field('social_network', 'option');
     </div>
 
     <!-- Back to Top Button sa custom SVG -->
-<button id="backToTop"
+    <button id="backToTop"
         class="fixed bottom-20 md:bottom-8 right-8 bg-primary/60 text-white p-3 rounded-full shadow-lg 
                hover:bg-secondary transition-all duration-300 hover:scale-110 
                focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50
-               opacity-0 translate-y-10 z-50 group ">
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         viewBox="0 0 448 512"
-         class="w-6 h-6 fill-current text-white group-hover:text-primary transition-colors duration-300">
-        <path d="M201.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 173.3 54.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
-    </svg>
-</button>
-    
+               opacity-0 translate-y-10 z-50 group "
+        aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="w-6 h-6 fill-current text-white group-hover:text-primary transition-colors duration-300">
+            <path d="M201.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 173.3 54.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+        </svg>
+    </button>
+
 </footer>
 <!-- </div>#page -->
 

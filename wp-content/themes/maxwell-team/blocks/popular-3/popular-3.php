@@ -51,7 +51,7 @@ $data = get_field('popular_3');
     /* Responsive styles */
     @media (max-width: 767px) {
         .tours-swiper .swiper-slide {
-            opacity: 0.5;
+            opacity: 1;
             transition: opacity 0.3s;
         }
 
@@ -181,16 +181,12 @@ $data = get_field('popular_3');
         if (!container) return;
 
         if (typeof Swiper === 'undefined') {
-            console.log('Swiper nije učitan još uvek');
             return false;
         }
 
         if (container.swiper) {
-            console.log('Swiper je već inicijalizovan za ovaj container');
             return true;
         }
-
-        console.log('Inicijalizujem Swiper za:', container);
 
         var swiperInstance = new Swiper(container, {
             slidesPerView: 1.2,
@@ -199,7 +195,7 @@ $data = get_field('popular_3');
             grabCursor: true,
             pagination: {
                 el: container.querySelector('.swiper-pagination'),
-                clickable: true,
+                clickable: false,
             },
             navigation: {
                 nextEl: container.querySelector('.swiper-button-next'),
@@ -211,7 +207,6 @@ $data = get_field('popular_3');
             },
             on: {
                 init: function() {
-                    console.log('Swiper uspešno inicijalizovan za:', container);
                 }
             }
         });
