@@ -18,8 +18,9 @@ $data = get_field('pricing_table');
     .pricing-table-<?php echo esc_attr($blocks_id); ?> {
         background-color: <?php echo $data['background_color'] ?? "#ffffff" ?>;
     }
+
     .mobile-box-<?php echo $blocks_id; ?> {
-        background-color: <?php echo '#ffffff' .dechex(80) ?? "#ffffffff" ?>;
+        background-color: <?php echo '#ffffff' . dechex(80) ?? "#ffffffff" ?>;
     }
 </style>
 
@@ -55,15 +56,23 @@ $data = get_field('pricing_table');
                             <?php if (!empty($item['title'])) : ?>
                                 <tr>
                                     <td colspan="4" class="py-2 px-6 font-bold">
-                                        <div class="inline-flex items-center text-primary">
-                                            <?php if (!empty($item['icon'])) : ?>
-                                                <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'mr-2 w-4 h-4'); ?>
+                                        <?php if (!empty($item['title'])) : ?>
+                                            <div class="inline-flex items-center text-primary">
+                                                <?php if (!empty($item['icon'])) : ?>
+                                                    <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
+                                                        <?php echo maxwell_render_svg($item['icon']['url'], 'mr-2 w-4 h-4'); ?>
+                                                    <?php endif; ?>
                                                 <?php endif; ?>
-                                            <?php endif; ?>
 
-                                            <?php echo esc_html($item['title']); ?>
-                                        </div>
+                                                <?php if (!empty($item['link'])) : ?>
+                                                    <a href="<?php echo $item['link']['url']; ?>" class="text-primary !underline">
+                                                        <?php echo esc_html($item['title']); ?>
+                                                    </a>
+                                                <?php else : ?>
+                                                    <?php echo esc_html($item['title']); ?>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php endif; ?>

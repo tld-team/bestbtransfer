@@ -2288,6 +2288,14 @@ a:hover {
   color: rgb(202 138 4 / var(--tw-text-opacity, 1));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
+.\!underline {
+  text-decoration-line: underline !important;
+}
+
 .opacity-0 {
   opacity: 0;
 }
