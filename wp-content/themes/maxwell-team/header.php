@@ -129,7 +129,10 @@
 						}
 						?>
 					</div>
-<?php echo do_shortcode('<div class="lang-switcher">[lang_switcher]</div>'); ?>
+					
+							<div class="lang-switcher mr-4 p-3">
+								<?php echo do_shortcode('[lang_switcher]'); ?>
+							</div>
 
 					<!-- Call Button -->
 					<div class="hidden md:flex flex-shrink-0">
@@ -185,18 +188,9 @@
 						?>
 
 						<div class="pt-4 border-t border-gray-200 flex justify-between">
-							<!-- Language Selector -->
-							<!-- <div class="flex items-center">
-								<i class="fas fa-globe mr-2 text-white"></i>
-								<select class="bg-transparent text-white font-medium">
-									<option>EN</option>
-									<option>ES</option>
-									<option>FR</option>
-								</select>
-							</div> -->
-
-							<?php echo do_shortcode('<div class="lang-switcher">[lang_switcher]</div>'); ?>
-
+							<div class="lang-switcher">
+								<?php echo do_shortcode('[lang_switcher]'); ?>
+							</div>
 							<?php link_4(['url' => '/contact-us', 'title' => 'Contact us']) ?>
 
 						</div>

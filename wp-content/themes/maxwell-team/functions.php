@@ -277,10 +277,13 @@ function my_polylang_switcher_shortcode()
 	ob_start();
 
 	pll_the_languages(array(
-		'dropdown' => 1,
 		'show_flags' => 1,
-		'show_names' => 0,
-		'display_names_as' => 'slug'
+		'show_names' => 1,
+		// 'display_names_as' => 'slug',
+		'dropdown' => 1,  // OVO KREIRA DROPDOWN
+		'hide_if_empty' => 0,
+		'hide_if_no_translation' => 0,
+		'hide_current' => 1
 	));
 
 	return ob_get_clean();
