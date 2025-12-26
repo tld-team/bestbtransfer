@@ -259,6 +259,7 @@ require get_template_directory() . '/inc/register-blocks.php';
  */
 require get_template_directory() . '/inc/components.php';
 
+
 /**
  * Load Jetpack compatibility file.
  */
