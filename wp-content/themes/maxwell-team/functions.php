@@ -174,7 +174,7 @@ add_action('widgets_init', 'mma_future_widgets_init');
 function mma_future_scripts()
 {
 	global $post;
-	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true)?? [''];
+	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true) ?? [''];
 	/** ==============================            custom styles and scripts            ============================== */
 	/**  */
 	wp_enqueue_style('main', get_template_directory_uri() . '/assets/dist/css/output.css');
@@ -203,7 +203,7 @@ add_action('wp_enqueue_scripts', 'mma_future_scripts', 20);
  * Enqueue admin scripts
  */
 function mma_future_admin_scripts($hook)
-{	
+{
 	global $post;
 	$acf_data = get_post_meta($post->ID, '_acf_blocks_list', true) ?? [''];
 	if ('post.php' === $hook) {
@@ -212,10 +212,10 @@ function mma_future_admin_scripts($hook)
 
 		// try {
 		// 	if (in_array('acf/popular-3', $acf_data)) {
-				wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
-				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
-				wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array(), _S_VERSION, true);
-			// }
+		wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
+		wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
+		wp_enqueue_script('popular-3', get_template_directory_uri() . '/assets/dist/js/popular-3.js', array(), _S_VERSION, true);
+		// }
 		// } catch (Exception $e) {
 		// 	tld_log($e->getMessage());
 		// }
@@ -266,3 +266,23 @@ require get_template_directory() . '/inc/components.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+function my_polylang_switcher_shortcode()
+{
+
+	if (! function_exists('pll_the_languages')) {
+		return '';
+	}
+
+	ob_start();
+
+	pll_the_languages(array(
+		'dropdown' => 1,
+		'show_flags' => 1,
+		'show_names' => 0,
+		'display_names_as' => 'slug'
+	));
+
+	return ob_get_clean();
+}
+add_shortcode('lang_switcher', 'my_polylang_switcher_shortcode');

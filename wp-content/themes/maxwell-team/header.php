@@ -129,6 +129,7 @@
 						}
 						?>
 					</div>
+<?php echo do_shortcode('<div class="lang-switcher">[lang_switcher]</div>'); ?>
 
 					<!-- Call Button -->
 					<div class="hidden md:flex flex-shrink-0">
@@ -193,6 +194,8 @@
 									<option>FR</option>
 								</select>
 							</div> -->
+
+							<?php echo do_shortcode('<div class="lang-switcher">[lang_switcher]</div>'); ?>
 
 							<?php link_4(['url' => '/contact-us', 'title' => 'Contact us']) ?>
 
