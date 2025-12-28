@@ -271,7 +271,7 @@ function my_polylang_switcher_shortcode()
 {
 
 	if (! function_exists('pll_the_languages')) {
-		return '';
+		return 'no function';
 	}
 
 	ob_start();
