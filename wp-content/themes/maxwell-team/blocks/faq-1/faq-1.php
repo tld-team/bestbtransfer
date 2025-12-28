@@ -25,7 +25,7 @@ $data = get_field('faq_1');
                 <?php endif; ?>
         </div>
 
-        <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16 accordion-container-<?php $id; ?>">
+        <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16 accordion-container-<?php echo $blocks_id; ?>">
             <?php if (!empty($data['items'])) : ?>
                 <?php foreach ($data['items'] as $key => $item) : ?>
                     <div class="accordion-item transition-all duration-200 bg-white border-b border-gray-200 shadow-sm rounded-xl cursor-pointer hover:bg-gray-50">
@@ -53,7 +53,7 @@ $data = get_field('faq_1');
 </section>
 
 <script>
-    const accordionItems = document.querySelectorAll('.accordion-container-<?php echo $id; ?> .accordion-item');
+    const accordionItems = document.querySelectorAll('.accordion-container-<?php echo $blocks_id; ?> .accordion-item');
     accordionItems.forEach((item, index) => {
         const button = item.querySelector('button');
         const content = item.querySelector('.accordion-content');
