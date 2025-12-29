@@ -92,9 +92,15 @@
 						<?php
 						// Get the primary menu
 						$menu_items = wp_get_nav_menu_items('menu-1');
-						foreach ($menu_items as $item) {
+						$menu_locations = get_nav_menu_locations();
+						$menu_1_id = $menu_locations['footer-menu-1'];
+						$menu_1 = wp_get_nav_menu_object($menu_1_id);
+						$menu_1_items = wp_get_nav_menu_items($menu_1_id);
+
+
+						foreach ($menu_1_items as $item) {
 							if ($item->menu_item_parent == 0) {
-								$children = array_filter($menu_items, function ($child) use ($item) {
+								$children = array_filter($menu_1_items, function ($child) use ($item) {
 									return $child->menu_item_parent == $item->ID;
 								});
 
@@ -152,9 +158,9 @@
 				<div class="mobile-menu md:hidden mt-4" id="menu4">
 					<div class="flex flex-col space-y-4 py-4">
 						<?php
-						foreach ($menu_items as $item) {
+						foreach ($menu_1_items as $item) {
 							if ($item->menu_item_parent == 0) {
-								$children = array_filter($menu_items, function ($child) use ($item) {
+								$children = array_filter($menu_1_items, function ($child) use ($item) {
 									return $child->menu_item_parent == $item->ID;
 								});
 
