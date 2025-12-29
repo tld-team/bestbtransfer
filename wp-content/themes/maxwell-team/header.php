@@ -91,9 +91,8 @@
 					<div class="hidden md:flex flex-1 justify-center items-center space-x-8">
 						<?php
 						// Get the primary menu
-						$menu_items = wp_get_nav_menu_items('menu-1');
 						$menu_locations = get_nav_menu_locations();
-						$menu_1_id = $menu_locations['footer-menu-1'];
+						$menu_1_id = $menu_locations['menu-1'];
 						$menu_1 = wp_get_nav_menu_object($menu_1_id);
 						$menu_1_items = wp_get_nav_menu_items($menu_1_id);
 
