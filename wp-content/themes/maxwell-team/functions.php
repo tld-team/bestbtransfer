@@ -289,3 +289,13 @@ function my_polylang_switcher_shortcode()
 	return ob_get_clean();
 }
 add_shortcode('lang_switcher', 'my_polylang_switcher_shortcode');
+
+function register_404_strings_for_translation() {
+    if (function_exists('pll_register_string')) {
+        pll_register_string('404 top title', 'Error 404', '404 Page');
+        pll_register_string('404 main title', 'Page not found', '404 Page');
+        pll_register_string('404 content', 'The page you are looking for does not exist or has been removed. We offer private and special passenger transfers across Slovenia and neighboring countries, including airport and city shuttle services. We are not a tour operator or travel agency.', '404 Page');
+        pll_register_string('404 button', 'Back to homepage', '404 Page');
+    }
+}
+add_action('init', 'register_404_strings_for_translation');
