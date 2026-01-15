@@ -261,15 +261,25 @@ require get_template_directory() . '/inc/components.php';
 
 
 /**
+ * This file includes the functions for setting default social media share image.
+ */
+require get_template_directory() . '/inc/default-share-image.php';
+
+
+/**
  * Load Jetpack compatibility file.
  */
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * This shortcode displays a language switcher powered by Polylang.
+ *
+ * @return string The language switcher HTML.
+ */
 function my_polylang_switcher_shortcode()
 {
-
 	if (! function_exists('pll_the_languages')) {
 		return 'no function';
 	}
@@ -290,8 +300,16 @@ function my_polylang_switcher_shortcode()
 }
 add_shortcode('lang_switcher', 'my_polylang_switcher_shortcode');
 
+
+/*
+ * Register 404 strings for translation.
+ *
+ * These strings can be translated using Polylang.
+ */
 function register_404_strings_for_translation() {
+    // Check if Polylang is active.
     if (function_exists('pll_register_string')) {
+        // Register strings.
         pll_register_string('404 top title', 'Error 404', '404 Page');
         pll_register_string('404 main title', 'Page not found', '404 Page');
         pll_register_string('404 content', 'The page you are looking for does not exist or has been removed. We offer private and special passenger transfers across Slovenia and neighboring countries, including airport and city shuttle services. We are not a tour operator or travel agency.', '404 Page');
