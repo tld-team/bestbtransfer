@@ -2479,7 +2479,9 @@ a:hover {
 }
 
 .mobile-menu.open {
-  max-height: 500px;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  overflow-y: auto;
 }
 
 .nav-shadow {

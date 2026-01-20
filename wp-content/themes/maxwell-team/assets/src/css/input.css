@@ -184,7 +184,8 @@
 }
 
 .mobile-menu.open {
-  max-height: 500px;
+  max-height: max-content;
+  overflow-y: auto;
 }
 
 .nav-shadow {

@@ -70,7 +70,7 @@
 
 .wpcf7-form input[type="submit"]:hover {
     background-color: white;
-    color: #F06F40 !important; /* hover:!text-[#F06F40] */
+    color: #BA8D33 !important; /* hover:!text-[#F06F40] */
     transform: scale(1.02); /* hover:scale-[1.02] */
     box-shadow: 0 10px 15px -3px rgba(240, 111, 64, 0.2); /* hover:shadow-lg hover:shadow-[#F06F40]/20 */
 }
