@@ -92,8 +92,8 @@
 .wpcf7-form input[type="tel"]:focus,
 .wpcf7-form select:focus,
 .wpcf7-form textarea:focus {
-    outline: 1px solid #BA8D33 !important;
-    border: 1px solid #BA8D33 !important;
+    outline: none !important;
+    border: none !important;
 }
 
 input:where([type="text"]):focus,
